@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "399436863738",
+    "project_id": "palaskhed-daulat-grampanchayat",
+    "storage_bucket": "palaskhed-daulat-grampanchayat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399436863738:android:1d6f2c4b51c14714eb5143",
+        "android_client_info": {
+          "package_name": "com.aistudio.grampanchayat.gpczapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqsiZ4I3gle-nULMpMpaZ8cWHIQSYPCBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

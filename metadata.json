@@ -1,0 +1,6 @@
+{
+  "name": "Grampanchayat Citizen App",
+  "description": "Grampanchayat Citizen mobile application for public grievance redressal, village info, notices, water supply schedules, certificate services, and AI assistant in Marathi and English.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
