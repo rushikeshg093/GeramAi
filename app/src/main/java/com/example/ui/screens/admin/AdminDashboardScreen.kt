@@ -203,21 +203,47 @@ fun AdminDashboardScreen(
                                         color = Color.White
                                     )
                                     Text(
-                                        text = adminUser?.email ?: "admin@shiroligp.gov.in",
+                                        text = "${adminUser?.designation ?: "ग्रामविकास अधिकारी"} • ${adminUser?.email ?: ""}",
                                         style = MaterialTheme.typography.bodySmall,
-                                        color = Color.White.copy(alpha = 0.85f)
+                                        color = Color.White.copy(alpha = 0.9f)
                                     )
                                     Spacer(modifier = Modifier.height(4.dp))
-                                    Surface(
-                                        shape = RoundedCornerShape(6.dp),
-                                        color = Color.White.copy(alpha = 0.25f)
+                                    Text(
+                                        text = "📍 कार्यक्षेत्र: ${adminUser?.gramPanchayatNameMr ?: panchayatProfile.nameMr} (ता. ${adminUser?.talukaId?.replaceFirstChar { it.uppercase() } ?: panchayatProfile.talukaMr}, जि. ${adminUser?.districtId?.replaceFirstChar { it.uppercase() } ?: panchayatProfile.districtMr})",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = Color.White,
+                                        fontWeight = FontWeight.SemiBold
+                                    )
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Row(
+                                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                        verticalAlignment = Alignment.CenterVertically
                                     ) {
-                                        Text(
-                                            text = if (language == AppLanguage.MARATHI) "रोल: व्यवस्थापक (Active Admin)" else "Role: Active Administrator",
-                                            style = MaterialTheme.typography.labelSmall,
-                                            color = Color.White,
-                                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                        )
+                                        Surface(
+                                            shape = RoundedCornerShape(6.dp),
+                                            color = Color.White.copy(alpha = 0.25f)
+                                        ) {
+                                            Text(
+                                                text = if (language == AppLanguage.MARATHI) "सक्रिय अधिकारी (Active Officer)" else "Active Officer",
+                                                style = MaterialTheme.typography.labelSmall,
+                                                color = Color.White,
+                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                            )
+                                        }
+
+                                        if (!adminUser?.adminId.isNullOrBlank()) {
+                                            Surface(
+                                                shape = RoundedCornerShape(6.dp),
+                                                color = Color.White.copy(alpha = 0.25f)
+                                            ) {
+                                                Text(
+                                                    text = "ID: ${adminUser?.adminId}",
+                                                    style = MaterialTheme.typography.labelSmall,
+                                                    color = Color.White,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
                                     }
                                 }
                             }

@@ -324,6 +324,83 @@ class GrampanchayatRepository(context: Context) {
         userDao.clearUserProfile()
     }
 
+    // ================= REAL FIREBASE PHONE AUTHENTICATION =================
+
+    fun sendPhoneOtp(
+        activity: android.app.Activity,
+        phoneNumber: String,
+        forceResendingToken: com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken? = null,
+        onCodeSent: (verificationId: String, token: com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken) -> Unit,
+        onVerificationCompleted: (credential: com.google.firebase.auth.PhoneAuthCredential) -> Unit,
+        onVerificationFailed: (exception: Exception) -> Unit
+    ) {
+        authRepository.sendPhoneOtp(
+            activity = activity,
+            phoneNumber = phoneNumber,
+            forceResendingToken = forceResendingToken,
+            onCodeSent = onCodeSent,
+            onVerificationCompleted = onVerificationCompleted,
+            onVerificationFailed = onVerificationFailed
+        )
+    }
+
+    suspend fun verifyOtpAndSignIn(
+        verificationId: String,
+        smsCode: String
+    ): Result<com.google.firebase.auth.FirebaseUser> {
+        return authRepository.verifyOtpAndSignIn(verificationId, smsCode)
+    }
+
+    suspend fun signInWithPhoneCredential(
+        credential: com.google.firebase.auth.PhoneAuthCredential
+    ): Result<com.google.firebase.auth.FirebaseUser> {
+        return authRepository.signInWithPhoneCredential(credential)
+    }
+
+    suspend fun completeCitizenRegistrationWithFirebaseUser(
+        firebaseUser: com.google.firebase.auth.FirebaseUser,
+        fullName: String,
+        districtId: String,
+        talukaId: String,
+        gramPanchayatId: String,
+        wardNumber: Int,
+        mobileNumber: String,
+        password: String = "Citizen@123"
+    ): Result<UserProfile> {
+        val result = authRepository.completeCitizenRegistrationWithFirebaseUser(
+            firebaseUser = firebaseUser,
+            fullName = fullName,
+            districtId = districtId,
+            talukaId = talukaId,
+            gramPanchayatId = gramPanchayatId,
+            wardNumber = wardNumber,
+            mobileNumber = mobileNumber,
+            password = password
+        )
+        if (result.isSuccess) {
+            val profile = result.getOrThrow()
+            userDao.insertOrUpdateProfile(profile)
+        }
+        return result
+    }
+
+    suspend fun completeCitizenLoginWithFirebaseUser(
+        firebaseUser: com.google.firebase.auth.FirebaseUser,
+        mobileNumber: String,
+        selectedGramPanchayatId: String
+    ): Result<UserProfile> {
+        val result = authRepository.completeCitizenLoginWithFirebaseUser(
+            firebaseUser = firebaseUser,
+            mobileNumber = mobileNumber,
+            selectedGramPanchayatId = selectedGramPanchayatId
+        )
+        if (result.isSuccess) {
+            val profile = result.getOrThrow()
+            userDao.insertOrUpdateProfile(profile)
+        }
+        return result
+    }
+
     suspend fun saveUserProfile(profile: UserProfile) {
         userDao.insertOrUpdateProfile(profile)
         scope.launch {
@@ -397,18 +474,6 @@ class GrampanchayatRepository(context: Context) {
     }
 
     // ================= ADMIN OPERATIONS =================
-
-    suspend fun signInAdmin(email: String, pass: String): Result<AdminUser> {
-        return withContext(Dispatchers.IO) {
-            authRepository.signInAdmin(email, pass)
-        }
-    }
-
-    suspend fun sendPasswordResetAdmin(email: String): Result<Unit> {
-        return withContext(Dispatchers.IO) {
-            authRepository.sendPasswordReset(email)
-        }
-    }
 
     fun signOutAdmin() {
         authRepository.signOut()
@@ -775,6 +840,67 @@ class GrampanchayatRepository(context: Context) {
     suspend fun seedAllDataToFirestore(): Boolean {
         return withContext(Dispatchers.IO) {
             firestoreSource.seedAllDataToFirestore()
+        }
+    }
+
+    suspend fun lookupOfficerForActivation(query: String): Result<PreapprovedOfficer> {
+        return withContext(Dispatchers.IO) {
+            authRepository.lookupOfficerForActivation(query)
+        }
+    }
+
+    suspend fun activateOfficerAccount(
+        adminIdOrMobile: String,
+        otp: String,
+        expectedOtp: String,
+        password: String
+    ): Result<AdminUser> {
+        return withContext(Dispatchers.IO) {
+            authRepository.activateOfficerAccount(adminIdOrMobile, otp, expectedOtp, password)
+        }
+    }
+
+    suspend fun signInAdmin(
+        adminIdOrMobile: String,
+        pass: String,
+        otp: String = "",
+        expectedOtp: String? = null
+    ): Result<AdminUser> {
+        return withContext(Dispatchers.IO) {
+            val result = authRepository.signInAdmin(adminIdOrMobile, pass, otp, expectedOtp)
+            if (result.isSuccess) {
+                val admin = result.getOrNull()
+                if (admin != null) {
+                    loadPanchayatDataForGp(admin.gramPanchayatId)
+                }
+            }
+            result
+        }
+    }
+
+    suspend fun sendPasswordResetAdmin(adminIdOrMobile: String): Result<Unit> {
+        return withContext(Dispatchers.IO) {
+            var emailToReset = adminIdOrMobile.trim()
+            if (!emailToReset.contains("@")) {
+                val officer = MaharashtraDirectory.findPreapprovedOfficer(emailToReset)
+                if (officer != null) {
+                    emailToReset = if (officer.officialEmail.contains("@")) officer.officialEmail else authRepository.formatOfficerEmail(officer.mobileNumber, officer.adminId)
+                } else {
+                    val cleanDigits = emailToReset.filter { it.isDigit() }
+                    emailToReset = authRepository.formatOfficerEmail(cleanDigits, emailToReset)
+                }
+            }
+            authRepository.sendPasswordReset(emailToReset)
+        }
+    }
+
+    fun loadPanchayatDataForGp(gpId: String) {
+        scope.launch {
+            firestoreSource.getPanchayatProfileFlow(gpId).collect { profile ->
+                if (profile != null) {
+                    _panchayatProfile.value = profile
+                }
+            }
         }
     }
 

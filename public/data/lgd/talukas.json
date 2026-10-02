@@ -1,0 +1,2508 @@
+[
+  {
+    "id": "4004",
+    "code": "4004",
+    "districtId": "468",
+    "nameEn": "Achalpur",
+    "nameMr": "अचलपूर"
+  },
+  {
+    "id": "4062",
+    "code": "4062",
+    "districtId": "475",
+    "nameEn": "Aheri",
+    "nameMr": "अहेरी"
+  },
+  {
+    "id": "4228",
+    "code": "4228",
+    "districtId": "481",
+    "nameEn": "Ahmadpur",
+    "nameMr": "अहमदपूर"
+  },
+  {
+    "id": "4292",
+    "code": "4292",
+    "districtId": "480",
+    "nameEn": "Ajra",
+    "nameMr": "आजरा"
+  },
+  {
+    "id": "4254",
+    "code": "4254",
+    "districtId": "496",
+    "nameEn": "Akkalkot",
+    "nameMr": "अक्कलकोट"
+  },
+  {
+    "id": "3950",
+    "code": "3950",
+    "districtId": "486",
+    "nameEn": "Akkalkuwa",
+    "nameMr": "अक्कलकुवा"
+  },
+  {
+    "id": "3991",
+    "code": "3991",
+    "districtId": "467",
+    "nameEn": "Akola",
+    "nameMr": "अकोला"
+  },
+  {
+    "id": "4201",
+    "code": "4201",
+    "districtId": "466",
+    "nameEn": "Akole",
+    "nameMr": "अकोले"
+  },
+  {
+    "id": "3989",
+    "code": "3989",
+    "districtId": "467",
+    "nameEn": "Akot",
+    "nameMr": "अकोट"
+  },
+  {
+    "id": "3951",
+    "code": "3951",
+    "districtId": "486",
+    "nameEn": "Akrani",
+    "nameMr": "अकर्नी"
+  },
+  {
+    "id": "4177",
+    "code": "4177",
+    "districtId": "491",
+    "nameEn": "Alibag",
+    "nameMr": "अलिबाग"
+  },
+  {
+    "id": "3969",
+    "code": "3969",
+    "districtId": "478",
+    "nameEn": "Amalner",
+    "nameMr": "अमळनेर"
+  },
+  {
+    "id": "4129",
+    "code": "4129",
+    "districtId": "479",
+    "nameEn": "Ambad",
+    "nameMr": "अंबड"
+  },
+  {
+    "id": "4170",
+    "code": "4170",
+    "districtId": "497",
+    "nameEn": "Ambarnath",
+    "nameMr": "अंबरनाथ"
+  },
+  {
+    "id": "4188",
+    "code": "4188",
+    "districtId": "490",
+    "nameEn": "Ambegaon",
+    "nameMr": "आंबेगाव"
+  },
+  {
+    "id": "4225",
+    "code": "4225",
+    "districtId": "470",
+    "nameEn": "Ambejogai",
+    "nameMr": "आंबेजोगाई"
+  },
+  {
+    "id": "4047",
+    "code": "4047",
+    "districtId": "476",
+    "nameEn": "Amgaon",
+    "nameMr": "आमगाव"
+  },
+  {
+    "id": "4009",
+    "code": "4009",
+    "districtId": "468",
+    "nameEn": "Amravati",
+    "nameMr": "अमरावती"
+  },
+  {
+    "id": "7179",
+    "code": "7179",
+    "districtId": "483",
+    "nameEn": "Andheri",
+    "nameMr": "अंधेरी"
+  },
+  {
+    "id": "4003",
+    "code": "4003",
+    "districtId": "468",
+    "nameEn": "Anjangaon Surji",
+    "nameMr": "अंजनगाव सुर्जी"
+  },
+  {
+    "id": "4099",
+    "code": "4099",
+    "districtId": "485",
+    "nameEn": "Ardhapur",
+    "nameMr": "अर्धापूर"
+  },
+  {
+    "id": "4050",
+    "code": "4050",
+    "districtId": "476",
+    "nameEn": "Arjuni Morgaon",
+    "nameMr": "अर्जुनी मोरगाव"
+  },
+  {
+    "id": "4053",
+    "code": "4053",
+    "districtId": "475",
+    "nameEn": "Armori",
+    "nameMr": "आरमोरी"
+  },
+  {
+    "id": "4088",
+    "code": "4088",
+    "districtId": "500",
+    "nameEn": "Arni",
+    "nameMr": "अर्नी"
+  },
+  {
+    "id": "4017",
+    "code": "4017",
+    "districtId": "498",
+    "nameEn": "Arvi",
+    "nameMr": "आर्वी"
+  },
+  {
+    "id": "4015",
+    "code": "4015",
+    "districtId": "498",
+    "nameEn": "Ashti",
+    "nameMr": "आष्टी"
+  },
+  {
+    "id": "4215",
+    "code": "4215",
+    "districtId": "470",
+    "nameEn": "Ashti",
+    "nameMr": "आष्टी"
+  },
+  {
+    "id": "4300",
+    "code": "4300",
+    "districtId": "493",
+    "nameEn": "Atpadi",
+    "nameMr": "आटपाडी"
+  },
+  {
+    "id": "4113",
+    "code": "4113",
+    "districtId": "477",
+    "nameEn": "Aundha (Nagnath)",
+    "nameMr": "औंढा (नागनाथ)"
+  },
+  {
+    "id": "4232",
+    "code": "4232",
+    "districtId": "481",
+    "nameEn": "Ausa",
+    "nameMr": "औसा"
+  },
+  {
+    "id": "4080",
+    "code": "4080",
+    "districtId": "500",
+    "nameEn": "Babulgaon",
+    "nameMr": "बाबूलगाव"
+  },
+  {
+    "id": "4128",
+    "code": "4128",
+    "districtId": "479",
+    "nameEn": "Badnapur",
+    "nameMr": "बदनापूर"
+  },
+  {
+    "id": "4145",
+    "code": "4145",
+    "districtId": "487",
+    "nameEn": "Baglan",
+    "nameMr": "बागलण"
+  },
+  {
+    "id": "3990",
+    "code": "3990",
+    "districtId": "467",
+    "nameEn": "Balapur",
+    "nameMr": "बाळापूर"
+  },
+  {
+    "id": "4074",
+    "code": "4074",
+    "districtId": "473",
+    "nameEn": "Ballarpur",
+    "nameMr": "बल्लारपूर"
+  },
+  {
+    "id": "4199",
+    "code": "4199",
+    "districtId": "490",
+    "nameEn": "Baramati",
+    "nameMr": "बारामती"
+  },
+  {
+    "id": "4246",
+    "code": "4246",
+    "districtId": "496",
+    "nameEn": "Barshi",
+    "nameMr": "बार्शी"
+  },
+  {
+    "id": "3994",
+    "code": "3994",
+    "districtId": "467",
+    "nameEn": "Barshitakli",
+    "nameMr": "बार्शीटाकळी"
+  },
+  {
+    "id": "4221",
+    "code": "4221",
+    "districtId": "470",
+    "nameEn": "Beed",
+    "nameMr": "बीड"
+  },
+  {
+    "id": "3971",
+    "code": "3971",
+    "districtId": "478",
+    "nameEn": "Bhadgaon",
+    "nameMr": "भडगाव"
+  },
+  {
+    "id": "4070",
+    "code": "4070",
+    "districtId": "473",
+    "nameEn": "Bhadravati",
+    "nameMr": "भद्रावती"
+  },
+  {
+    "id": "4061",
+    "code": "4061",
+    "districtId": "475",
+    "nameEn": "Bhamragad",
+    "nameMr": "भामरागड"
+  },
+  {
+    "id": "4039",
+    "code": "4039",
+    "districtId": "471",
+    "nameEn": "Bhandara",
+    "nameMr": "भंडारा"
+  },
+  {
+    "id": "4010",
+    "code": "4010",
+    "districtId": "468",
+    "nameEn": "Bhatkuli",
+    "nameMr": "भातकुली"
+  },
+  {
+    "id": "4166",
+    "code": "4166",
+    "districtId": "497",
+    "nameEn": "Bhiwandi",
+    "nameMr": "भिवंडी"
+  },
+  {
+    "id": "4036",
+    "code": "4036",
+    "districtId": "484",
+    "nameEn": "Bhiwapur",
+    "nameMr": "भिवापूर"
+  },
+  {
+    "id": "4102",
+    "code": "4102",
+    "districtId": "485",
+    "nameEn": "Bhokar",
+    "nameMr": "भोकर"
+  },
+  {
+    "id": "4125",
+    "code": "4125",
+    "districtId": "479",
+    "nameEn": "Bhokardan",
+    "nameMr": "भोकरदन"
+  },
+  {
+    "id": "4198",
+    "code": "4198",
+    "districtId": "490",
+    "nameEn": "Bhor",
+    "nameMr": "भोर"
+  },
+  {
+    "id": "4291",
+    "code": "4291",
+    "districtId": "480",
+    "nameEn": "Bhudargad",
+    "nameMr": "भूदरगड"
+  },
+  {
+    "id": "4237",
+    "code": "4237",
+    "districtId": "488",
+    "nameEn": "Bhum",
+    "nameMr": "भूम"
+  },
+  {
+    "id": "3965",
+    "code": "3965",
+    "districtId": "478",
+    "nameEn": "Bhusawal",
+    "nameMr": "भुसावळ"
+  },
+  {
+    "id": "4105",
+    "code": "4105",
+    "districtId": "485",
+    "nameEn": "Biloli",
+    "nameMr": "बिलोली"
+  },
+  {
+    "id": "3964",
+    "code": "3964",
+    "districtId": "478",
+    "nameEn": "Bodvad",
+    "nameMr": "बोधवड"
+  },
+  {
+    "id": "7181",
+    "code": "7181",
+    "districtId": "483",
+    "nameEn": "Borivali",
+    "nameMr": "बोरीवली"
+  },
+  {
+    "id": "4067",
+    "code": "4067",
+    "districtId": "473",
+    "nameEn": "Brahmapuri",
+    "nameMr": "ब्रम्हपुरी"
+  },
+  {
+    "id": "3984",
+    "code": "3984",
+    "districtId": "472",
+    "nameEn": "Buldana",
+    "nameMr": "बुलडाणा"
+  },
+  {
+    "id": "4230",
+    "code": "4230",
+    "districtId": "481",
+    "nameEn": "Chakur",
+    "nameMr": "चाकूर"
+  },
+  {
+    "id": "3972",
+    "code": "3972",
+    "districtId": "478",
+    "nameEn": "Chalisgaon",
+    "nameMr": "चाळीसगाव"
+  },
+  {
+    "id": "4058",
+    "code": "4058",
+    "districtId": "475",
+    "nameEn": "Chamorshi",
+    "nameMr": "चामोर्शी"
+  },
+  {
+    "id": "4294",
+    "code": "4294",
+    "districtId": "480",
+    "nameEn": "Chandgad",
+    "nameMr": "चंदगड"
+  },
+  {
+    "id": "4071",
+    "code": "4071",
+    "districtId": "473",
+    "nameEn": "Chandrapur",
+    "nameMr": "चंद्रपूर"
+  },
+  {
+    "id": "4013",
+    "code": "4013",
+    "districtId": "468",
+    "nameEn": "Chandur Railway",
+    "nameMr": "चांदूर रेल्वे"
+  },
+  {
+    "id": "4005",
+    "code": "4005",
+    "districtId": "468",
+    "nameEn": "Chandurbazar",
+    "nameMr": "चांदूर बाजार"
+  },
+  {
+    "id": "4148",
+    "code": "4148",
+    "districtId": "487",
+    "nameEn": "Chandvad",
+    "nameMr": "चांदवड"
+  },
+  {
+    "id": "4137",
+    "code": "4137",
+    "districtId": "469",
+    "nameEn": "Chhatrapati Sambhajinagar",
+    "nameMr": "छत्रपती संभाजीनगर"
+  },
+  {
+    "id": "4002",
+    "code": "4002",
+    "districtId": "468",
+    "nameEn": "Chikhaldara",
+    "nameMr": "चिखलदरा"
+  },
+  {
+    "id": "3983",
+    "code": "3983",
+    "districtId": "472",
+    "nameEn": "Chikhli",
+    "nameMr": "चिखली"
+  },
+  {
+    "id": "4065",
+    "code": "4065",
+    "districtId": "473",
+    "nameEn": "Chimur",
+    "nameMr": "चिमूर"
+  },
+  {
+    "id": "4269",
+    "code": "4269",
+    "districtId": "492",
+    "nameEn": "Chiplun",
+    "nameMr": "चिपळूण"
+  },
+  {
+    "id": "3960",
+    "code": "3960",
+    "districtId": "478",
+    "nameEn": "Chopda",
+    "nameMr": "चोपडा"
+  },
+  {
+    "id": "4158",
+    "code": "4158",
+    "districtId": "665",
+    "nameEn": "Dahanu",
+    "nameMr": "डहाणू"
+  },
+  {
+    "id": "4267",
+    "code": "4267",
+    "districtId": "492",
+    "nameEn": "Dapoli",
+    "nameMr": "दापोली"
+  },
+  {
+    "id": "4083",
+    "code": "4083",
+    "districtId": "500",
+    "nameEn": "Darwha",
+    "nameMr": "धारवा"
+  },
+  {
+    "id": "4011",
+    "code": "4011",
+    "districtId": "468",
+    "nameEn": "Daryapur",
+    "nameMr": "दर्यापूर"
+  },
+  {
+    "id": "4195",
+    "code": "4195",
+    "districtId": "490",
+    "nameEn": "Daund",
+    "nameMr": "दौंड"
+  },
+  {
+    "id": "4110",
+    "code": "4110",
+    "districtId": "485",
+    "nameEn": "Deglur",
+    "nameMr": "देगलुर"
+  },
+  {
+    "id": "4144",
+    "code": "4144",
+    "districtId": "487",
+    "nameEn": "Deola",
+    "nameMr": "देवळा"
+  },
+  {
+    "id": "3985",
+    "code": "3985",
+    "districtId": "472",
+    "nameEn": "Deolgaon Raja",
+    "nameMr": "देउळगाव राजा"
+  },
+  {
+    "id": "4020",
+    "code": "4020",
+    "districtId": "498",
+    "nameEn": "Deoli",
+    "nameMr": "देवळी"
+  },
+  {
+    "id": "4234",
+    "code": "4234",
+    "districtId": "481",
+    "nameEn": "Deoni",
+    "nameMr": "देवनी"
+  },
+  {
+    "id": "4051",
+    "code": "4051",
+    "districtId": "476",
+    "nameEn": "Deori",
+    "nameMr": "देवरी"
+  },
+  {
+    "id": "4052",
+    "code": "4052",
+    "districtId": "475",
+    "nameEn": "Desaiganj (Vadasa)",
+    "nameMr": "देसाईगंज (वडसा)"
+  },
+  {
+    "id": "4275",
+    "code": "4275",
+    "districtId": "495",
+    "nameEn": "Devgad",
+    "nameMr": "देवगड"
+  },
+  {
+    "id": "4014",
+    "code": "4014",
+    "districtId": "468",
+    "nameEn": "Dhamangaon Railway",
+    "nameMr": "धामनगाव रेल्वे"
+  },
+  {
+    "id": "4056",
+    "code": "4056",
+    "districtId": "475",
+    "nameEn": "Dhanora",
+    "nameMr": "धानोरा"
+  },
+  {
+    "id": "3968",
+    "code": "3968",
+    "districtId": "478",
+    "nameEn": "Dharangaon",
+    "nameMr": "धरणगाव"
+  },
+  {
+    "id": "4240",
+    "code": "4240",
+    "districtId": "488",
+    "nameEn": "Dharashiv",
+    "nameMr": "धाराशिव"
+  },
+  {
+    "id": "4104",
+    "code": "4104",
+    "districtId": "485",
+    "nameEn": "Dharmabad",
+    "nameMr": "धर्माबाद"
+  },
+  {
+    "id": "4001",
+    "code": "4001",
+    "districtId": "468",
+    "nameEn": "Dharni",
+    "nameMr": "धारणी"
+  },
+  {
+    "id": "4223",
+    "code": "4223",
+    "districtId": "470",
+    "nameEn": "Dharur",
+    "nameMr": "धारूर"
+  },
+  {
+    "id": "3959",
+    "code": "3959",
+    "districtId": "474",
+    "nameEn": "Dhule",
+    "nameMr": "धुळे"
+  },
+  {
+    "id": "4084",
+    "code": "4084",
+    "districtId": "500",
+    "nameEn": "Digras",
+    "nameMr": "दिग्रस"
+  },
+  {
+    "id": "4149",
+    "code": "4149",
+    "districtId": "487",
+    "nameEn": "Dindori",
+    "nameMr": "दिंडोरी"
+  },
+  {
+    "id": "4282",
+    "code": "4282",
+    "districtId": "495",
+    "nameEn": "Dodamarg",
+    "nameMr": "दोडामार्ग"
+  },
+  {
+    "id": "3967",
+    "code": "3967",
+    "districtId": "478",
+    "nameEn": "Erandol",
+    "nameMr": "एरंडोल"
+  },
+  {
+    "id": "4060",
+    "code": "4060",
+    "districtId": "475",
+    "nameEn": "Etapalli",
+    "nameMr": "एटापल्ली"
+  },
+  {
+    "id": "4057",
+    "code": "4057",
+    "districtId": "475",
+    "nameEn": "Gadchiroli",
+    "nameMr": "गडचिरोली"
+  },
+  {
+    "id": "4293",
+    "code": "4293",
+    "districtId": "480",
+    "nameEn": "Gadhinglaj",
+    "nameMr": "गडहिंग्लज"
+  },
+  {
+    "id": "4288",
+    "code": "4288",
+    "districtId": "480",
+    "nameEn": "Gaganbawada",
+    "nameMr": "गगनबावडा"
+  },
+  {
+    "id": "4122",
+    "code": "4122",
+    "districtId": "489",
+    "nameEn": "Gangakhed",
+    "nameMr": "गंगाखेड"
+  },
+  {
+    "id": "4140",
+    "code": "4140",
+    "districtId": "469",
+    "nameEn": "Gangapur",
+    "nameMr": "गंगापूर"
+  },
+  {
+    "id": "4218",
+    "code": "4218",
+    "districtId": "470",
+    "nameEn": "Georai",
+    "nameMr": "गेवराई"
+  },
+  {
+    "id": "4130",
+    "code": "4130",
+    "districtId": "479",
+    "nameEn": "Ghansawangi",
+    "nameMr": "घनसावंगी"
+  },
+  {
+    "id": "4089",
+    "code": "4089",
+    "districtId": "500",
+    "nameEn": "Ghatanji",
+    "nameMr": "घाटंजी"
+  },
+  {
+    "id": "4046",
+    "code": "4046",
+    "districtId": "476",
+    "nameEn": "Gondiya",
+    "nameMr": "गोंदिया"
+  },
+  {
+    "id": "4078",
+    "code": "4078",
+    "districtId": "473",
+    "nameEn": "Gondpipri",
+    "nameMr": "गोंडपिपरी"
+  },
+  {
+    "id": "4045",
+    "code": "4045",
+    "districtId": "476",
+    "nameEn": "Goregaon",
+    "nameMr": "गोरेगाव"
+  },
+  {
+    "id": "4270",
+    "code": "4270",
+    "districtId": "492",
+    "nameEn": "Guhagar",
+    "nameMr": "गुहाघर"
+  },
+  {
+    "id": "4098",
+    "code": "4098",
+    "districtId": "485",
+    "nameEn": "Hadgaon",
+    "nameMr": "हदगाव"
+  },
+  {
+    "id": "4285",
+    "code": "4285",
+    "districtId": "480",
+    "nameEn": "Hatkanangle",
+    "nameMr": "हातकणंगले"
+  },
+  {
+    "id": "4193",
+    "code": "4193",
+    "districtId": "490",
+    "nameEn": "Haveli",
+    "nameMr": "हवेली"
+  },
+  {
+    "id": "4097",
+    "code": "4097",
+    "districtId": "485",
+    "nameEn": "Himayatnagar",
+    "nameMr": "हिमायतनगर"
+  },
+  {
+    "id": "4021",
+    "code": "4021",
+    "districtId": "498",
+    "nameEn": "Hinganghat",
+    "nameMr": "हिंगणघाट"
+  },
+  {
+    "id": "4033",
+    "code": "4033",
+    "districtId": "484",
+    "nameEn": "Hingna",
+    "nameMr": "हिंगणा"
+  },
+  {
+    "id": "4112",
+    "code": "4112",
+    "districtId": "477",
+    "nameEn": "Hingoli",
+    "nameMr": "हिंगोली"
+  },
+  {
+    "id": "4153",
+    "code": "4153",
+    "districtId": "487",
+    "nameEn": "Igatpuri",
+    "nameMr": "इगतपूरी"
+  },
+  {
+    "id": "4200",
+    "code": "4200",
+    "districtId": "490",
+    "nameEn": "Indapur",
+    "nameMr": "इंदापूर"
+  },
+  {
+    "id": "4126",
+    "code": "4126",
+    "districtId": "479",
+    "nameEn": "Jafrabad",
+    "nameMr": "जाफ्राबाद"
+  },
+  {
+    "id": "3966",
+    "code": "3966",
+    "districtId": "478",
+    "nameEn": "Jalgaon",
+    "nameMr": "जळगाव"
+  },
+  {
+    "id": "3975",
+    "code": "3975",
+    "districtId": "472",
+    "nameEn": "Jalgaon (Jamod)",
+    "nameMr": "जळगाव (जामोद)"
+  },
+  {
+    "id": "4229",
+    "code": "4229",
+    "districtId": "481",
+    "nameEn": "Jalkot",
+    "nameMr": "जलकोट"
+  },
+  {
+    "id": "4127",
+    "code": "4127",
+    "districtId": "479",
+    "nameEn": "Jalna",
+    "nameMr": "जालना"
+  },
+  {
+    "id": "4214",
+    "code": "4214",
+    "districtId": "466",
+    "nameEn": "Jamkhed",
+    "nameMr": "जामखेड"
+  },
+  {
+    "id": "3974",
+    "code": "3974",
+    "districtId": "478",
+    "nameEn": "Jamner",
+    "nameMr": "जामनेर"
+  },
+  {
+    "id": "4263",
+    "code": "4263",
+    "districtId": "494",
+    "nameEn": "Jaoli",
+    "nameMr": "जावळी"
+  },
+  {
+    "id": "4304",
+    "code": "4304",
+    "districtId": "493",
+    "nameEn": "Jat",
+    "nameMr": "जत"
+  },
+  {
+    "id": "4160",
+    "code": "4160",
+    "districtId": "665",
+    "nameEn": "Jawhar",
+    "nameMr": "जव्हार"
+  },
+  {
+    "id": "4117",
+    "code": "4117",
+    "districtId": "489",
+    "nameEn": "Jintur",
+    "nameMr": "जिंतुर"
+  },
+  {
+    "id": "4076",
+    "code": "4076",
+    "districtId": "473",
+    "nameEn": "Jiwati",
+    "nameMr": "जिवती"
+  },
+  {
+    "id": "4187",
+    "code": "4187",
+    "districtId": "490",
+    "nameEn": "Junnar",
+    "nameMr": "जुन्नर"
+  },
+  {
+    "id": "4298",
+    "code": "4298",
+    "districtId": "493",
+    "nameEn": "Kadegaon",
+    "nameMr": "कडेगाव"
+  },
+  {
+    "id": "4290",
+    "code": "4290",
+    "districtId": "480",
+    "nameEn": "Kagal",
+    "nameMr": "कागल"
+  },
+  {
+    "id": "4222",
+    "code": "4222",
+    "districtId": "470",
+    "nameEn": "Kaij",
+    "nameMr": "केज"
+  },
+  {
+    "id": "4239",
+    "code": "4239",
+    "districtId": "488",
+    "nameEn": "Kalamb",
+    "nameMr": "कळंब"
+  },
+  {
+    "id": "4081",
+    "code": "4081",
+    "districtId": "500",
+    "nameEn": "Kalamb",
+    "nameMr": "कळंब"
+  },
+  {
+    "id": "4025",
+    "code": "4025",
+    "districtId": "484",
+    "nameEn": "Kalameshwar",
+    "nameMr": "कळमेश्वर"
+  },
+  {
+    "id": "4114",
+    "code": "4114",
+    "districtId": "477",
+    "nameEn": "Kalamnuri",
+    "nameMr": "कळमनुरी"
+  },
+  {
+    "id": "4143",
+    "code": "4143",
+    "districtId": "487",
+    "nameEn": "Kalwan",
+    "nameMr": "कालवण"
+  },
+  {
+    "id": "4168",
+    "code": "4168",
+    "districtId": "497",
+    "nameEn": "Kalyan",
+    "nameMr": "कल्याण"
+  },
+  {
+    "id": "4030",
+    "code": "4030",
+    "districtId": "484",
+    "nameEn": "Kamptee",
+    "nameMr": "कामठी"
+  },
+  {
+    "id": "4108",
+    "code": "4108",
+    "districtId": "485",
+    "nameEn": "Kandhar",
+    "nameMr": "कंधार"
+  },
+  {
+    "id": "4277",
+    "code": "4277",
+    "districtId": "495",
+    "nameEn": "Kankavli",
+    "nameMr": "कणकवली"
+  },
+  {
+    "id": "4133",
+    "code": "4133",
+    "districtId": "469",
+    "nameEn": "Kannad",
+    "nameMr": "कन्नड"
+  },
+  {
+    "id": "4265",
+    "code": "4265",
+    "districtId": "494",
+    "nameEn": "Karad",
+    "nameMr": "कराड"
+  },
+  {
+    "id": "4016",
+    "code": "4016",
+    "districtId": "498",
+    "nameEn": "Karanja",
+    "nameMr": "कारंजा"
+  },
+  {
+    "id": "3997",
+    "code": "3997",
+    "districtId": "499",
+    "nameEn": "Karanja",
+    "nameMr": "कारंजा"
+  },
+  {
+    "id": "4213",
+    "code": "4213",
+    "districtId": "466",
+    "nameEn": "Karjat",
+    "nameMr": "कर्जत"
+  },
+  {
+    "id": "4174",
+    "code": "4174",
+    "districtId": "491",
+    "nameEn": "Karjat",
+    "nameMr": "कर्जत"
+  },
+  {
+    "id": "4244",
+    "code": "4244",
+    "districtId": "496",
+    "nameEn": "Karmala",
+    "nameMr": "करमाळा"
+  },
+  {
+    "id": "4287",
+    "code": "4287",
+    "districtId": "480",
+    "nameEn": "Karvir",
+    "nameMr": "करवीर"
+  },
+  {
+    "id": "4024",
+    "code": "4024",
+    "districtId": "484",
+    "nameEn": "Katol",
+    "nameMr": "काटोल"
+  },
+  {
+    "id": "4303",
+    "code": "4303",
+    "districtId": "493",
+    "nameEn": "Kavathemahankal",
+    "nameMr": "कवठेमहांकाळ"
+  },
+  {
+    "id": "4090",
+    "code": "4090",
+    "districtId": "500",
+    "nameEn": "Kelapur",
+    "nameMr": "केलापूर"
+  },
+  {
+    "id": "4175",
+    "code": "4175",
+    "districtId": "491",
+    "nameEn": "Khalapur",
+    "nameMr": "खालापूर"
+  },
+  {
+    "id": "3981",
+    "code": "3981",
+    "districtId": "472",
+    "nameEn": "Khamgaon",
+    "nameMr": "खामगाव"
+  },
+  {
+    "id": "4299",
+    "code": "4299",
+    "districtId": "493",
+    "nameEn": "Khanapur",
+    "nameMr": "खानापूर"
+  },
+  {
+    "id": "4257",
+    "code": "4257",
+    "districtId": "494",
+    "nameEn": "Khandala",
+    "nameMr": "खंडाळा"
+  },
+  {
+    "id": "4260",
+    "code": "4260",
+    "districtId": "494",
+    "nameEn": "Khatav",
+    "nameMr": "खटाव"
+  },
+  {
+    "id": "4190",
+    "code": "4190",
+    "districtId": "490",
+    "nameEn": "Khed",
+    "nameMr": "खेड"
+  },
+  {
+    "id": "4268",
+    "code": "4268",
+    "districtId": "492",
+    "nameEn": "Khed",
+    "nameMr": "खेड"
+  },
+  {
+    "id": "4138",
+    "code": "4138",
+    "districtId": "469",
+    "nameEn": "Khuldabad",
+    "nameMr": "खुलताबाद"
+  },
+  {
+    "id": "4096",
+    "code": "4096",
+    "districtId": "485",
+    "nameEn": "Kinwat",
+    "nameMr": "किनवत"
+  },
+  {
+    "id": "4203",
+    "code": "4203",
+    "districtId": "466",
+    "nameEn": "Kopargaon",
+    "nameMr": "कोपरगाव"
+  },
+  {
+    "id": "4055",
+    "code": "4055",
+    "districtId": "475",
+    "nameEn": "Korchi",
+    "nameMr": "कोरची"
+  },
+  {
+    "id": "4261",
+    "code": "4261",
+    "districtId": "494",
+    "nameEn": "Koregaon",
+    "nameMr": "कोरेगाव"
+  },
+  {
+    "id": "4075",
+    "code": "4075",
+    "districtId": "473",
+    "nameEn": "Korpana",
+    "nameMr": "कोरपना"
+  },
+  {
+    "id": "4280",
+    "code": "4280",
+    "districtId": "495",
+    "nameEn": "Kudal",
+    "nameMr": "कुडाळ"
+  },
+  {
+    "id": "4035",
+    "code": "4035",
+    "districtId": "484",
+    "nameEn": "Kuhi",
+    "nameMr": "कुही"
+  },
+  {
+    "id": "4054",
+    "code": "4054",
+    "districtId": "475",
+    "nameEn": "Kurkheda",
+    "nameMr": "कुरखेडा"
+  },
+  {
+    "id": "7180",
+    "code": "7180",
+    "districtId": "483",
+    "nameEn": "Kurla",
+    "nameMr": "कुर्ला"
+  },
+  {
+    "id": "4043",
+    "code": "4043",
+    "districtId": "471",
+    "nameEn": "Lakhandur",
+    "nameMr": "लाखंदूर"
+  },
+  {
+    "id": "4041",
+    "code": "4041",
+    "districtId": "471",
+    "nameEn": "Lakhani",
+    "nameMr": "लाखनी"
+  },
+  {
+    "id": "4273",
+    "code": "4273",
+    "districtId": "492",
+    "nameEn": "Lanja",
+    "nameMr": "लांजा"
+  },
+  {
+    "id": "4226",
+    "code": "4226",
+    "districtId": "481",
+    "nameEn": "Latur",
+    "nameMr": "लातूर"
+  },
+  {
+    "id": "4107",
+    "code": "4107",
+    "districtId": "485",
+    "nameEn": "Loha",
+    "nameMr": "लोहा"
+  },
+  {
+    "id": "4242",
+    "code": "4242",
+    "districtId": "488",
+    "nameEn": "Lohara",
+    "nameMr": "लोहारा"
+  },
+  {
+    "id": "3987",
+    "code": "3987",
+    "districtId": "472",
+    "nameEn": "Lonar",
+    "nameMr": "लोणार"
+  },
+  {
+    "id": "4245",
+    "code": "4245",
+    "districtId": "496",
+    "nameEn": "Madha",
+    "nameMr": "माढा"
+  },
+  {
+    "id": "4255",
+    "code": "4255",
+    "districtId": "494",
+    "nameEn": "Mahabaleshwar",
+    "nameMr": "महाबळेश्वर"
+  },
+  {
+    "id": "4185",
+    "code": "4185",
+    "districtId": "491",
+    "nameEn": "Mahad",
+    "nameMr": "महाड"
+  },
+  {
+    "id": "4087",
+    "code": "4087",
+    "districtId": "500",
+    "nameEn": "Mahagaon",
+    "nameMr": "महागाव"
+  },
+  {
+    "id": "4095",
+    "code": "4095",
+    "districtId": "485",
+    "nameEn": "Mahur",
+    "nameMr": "माहूर"
+  },
+  {
+    "id": "4219",
+    "code": "4219",
+    "districtId": "470",
+    "nameEn": "Majalgaon",
+    "nameMr": "माजलगाव"
+  },
+  {
+    "id": "3995",
+    "code": "3995",
+    "districtId": "499",
+    "nameEn": "Malegaon",
+    "nameMr": "मालेगाव"
+  },
+  {
+    "id": "4146",
+    "code": "4146",
+    "districtId": "487",
+    "nameEn": "Malegaon",
+    "nameMr": "मालेगाव"
+  },
+  {
+    "id": "3979",
+    "code": "3979",
+    "districtId": "472",
+    "nameEn": "Malkapur",
+    "nameMr": "मलकापूर"
+  },
+  {
+    "id": "4250",
+    "code": "4250",
+    "districtId": "496",
+    "nameEn": "Malshiras",
+    "nameMr": "माळशिरस"
+  },
+  {
+    "id": "4278",
+    "code": "4278",
+    "districtId": "495",
+    "nameEn": "Malwan",
+    "nameMr": "मालवण"
+  },
+  {
+    "id": "4259",
+    "code": "4259",
+    "districtId": "494",
+    "nameEn": "Man",
+    "nameMr": "माण"
+  },
+  {
+    "id": "4266",
+    "code": "4266",
+    "districtId": "492",
+    "nameEn": "Mandangad",
+    "nameMr": "मंडणगड"
+  },
+  {
+    "id": "4252",
+    "code": "4252",
+    "districtId": "496",
+    "nameEn": "Mangalvedhe",
+    "nameMr": "मंगळवेढे"
+  },
+  {
+    "id": "4181",
+    "code": "4181",
+    "districtId": "491",
+    "nameEn": "Mangaon",
+    "nameMr": "मानगाव"
+  },
+  {
+    "id": "3996",
+    "code": "3996",
+    "districtId": "499",
+    "nameEn": "Mangrulpir",
+    "nameMr": "मंगरूळपीर"
+  },
+  {
+    "id": "3998",
+    "code": "3998",
+    "districtId": "499",
+    "nameEn": "Manora",
+    "nameMr": "मानोरा"
+  },
+  {
+    "id": "4132",
+    "code": "4132",
+    "districtId": "479",
+    "nameEn": "Mantha",
+    "nameMr": "मंठा"
+  },
+  {
+    "id": "4119",
+    "code": "4119",
+    "districtId": "489",
+    "nameEn": "Manwath",
+    "nameMr": "मानवत"
+  },
+  {
+    "id": "4092",
+    "code": "4092",
+    "districtId": "500",
+    "nameEn": "Maregaon",
+    "nameMr": "मारेगाव"
+  },
+  {
+    "id": "4029",
+    "code": "4029",
+    "districtId": "484",
+    "nameEn": "Mauda",
+    "nameMr": "मौदा"
+  },
+  {
+    "id": "4191",
+    "code": "4191",
+    "districtId": "490",
+    "nameEn": "Mawal",
+    "nameMr": "मावळ"
+  },
+  {
+    "id": "3982",
+    "code": "3982",
+    "districtId": "472",
+    "nameEn": "Mehkar",
+    "nameMr": "मेहकर"
+  },
+  {
+    "id": "4184",
+    "code": "4184",
+    "districtId": "491",
+    "nameEn": "Mhasla",
+    "nameMr": "म्हासळा"
+  },
+  {
+    "id": "4302",
+    "code": "4302",
+    "districtId": "493",
+    "nameEn": "Miraj",
+    "nameMr": "मिरज"
+  },
+  {
+    "id": "4038",
+    "code": "4038",
+    "districtId": "471",
+    "nameEn": "Mohadi",
+    "nameMr": "मोहाडी"
+  },
+  {
+    "id": "4248",
+    "code": "4248",
+    "districtId": "496",
+    "nameEn": "Mohol",
+    "nameMr": "मोहोळ"
+  },
+  {
+    "id": "4161",
+    "code": "4161",
+    "districtId": "665",
+    "nameEn": "Mokhada",
+    "nameMr": "मोखाडा"
+  },
+  {
+    "id": "4006",
+    "code": "4006",
+    "districtId": "468",
+    "nameEn": "Morshi",
+    "nameMr": "मोर्शी"
+  },
+  {
+    "id": "3980",
+    "code": "3980",
+    "districtId": "472",
+    "nameEn": "Motala",
+    "nameMr": "मोताळा"
+  },
+  {
+    "id": "4101",
+    "code": "4101",
+    "districtId": "485",
+    "nameEn": "Mudkhed",
+    "nameMr": "मुदखेड"
+  },
+  {
+    "id": "4109",
+    "code": "4109",
+    "districtId": "485",
+    "nameEn": "Mukhed",
+    "nameMr": "मुखेड"
+  },
+  {
+    "id": "3963",
+    "code": "3963",
+    "districtId": "478",
+    "nameEn": "Muktainagar (Edlabad)",
+    "nameMr": "मुक्ताईनगर(एदलाबाद)"
+  },
+  {
+    "id": "4072",
+    "code": "4072",
+    "districtId": "473",
+    "nameEn": "Mul",
+    "nameMr": "मुल"
+  },
+  {
+    "id": "4059",
+    "code": "4059",
+    "districtId": "475",
+    "nameEn": "Mulchera",
+    "nameMr": "मुलचेरा"
+  },
+  {
+    "id": "4192",
+    "code": "4192",
+    "districtId": "490",
+    "nameEn": "Mulshi",
+    "nameMr": "मुळशी"
+  },
+  {
+    "id": "4171",
+    "code": "4171",
+    "districtId": "497",
+    "nameEn": "Murbad",
+    "nameMr": "मुरबाड"
+  },
+  {
+    "id": "3992",
+    "code": "3992",
+    "districtId": "467",
+    "nameEn": "Murtijapur",
+    "nameMr": "मुर्तिजापूर"
+  },
+  {
+    "id": "4178",
+    "code": "4178",
+    "districtId": "491",
+    "nameEn": "Murud",
+    "nameMr": "मुरूड"
+  },
+  {
+    "id": "4209",
+    "code": "4209",
+    "districtId": "466",
+    "nameEn": "Nagar",
+    "nameMr": "नगर"
+  },
+  {
+    "id": "4066",
+    "code": "4066",
+    "districtId": "473",
+    "nameEn": "Nagbhid",
+    "nameMr": "नागभिड"
+  },
+  {
+    "id": "4031",
+    "code": "4031",
+    "districtId": "484",
+    "nameEn": "Nagpur (Rural)",
+    "nameMr": "नागपूर (ग्रामीण)"
+  },
+  {
+    "id": "4032",
+    "code": "4032",
+    "districtId": "484",
+    "nameEn": "Nagpur (Urban)",
+    "nameMr": "नागपूर (शहर)"
+  },
+  {
+    "id": "4106",
+    "code": "4106",
+    "districtId": "485",
+    "nameEn": "Naigaon (Khairgaon)",
+    "nameMr": "नायगाव (खैरगाव)"
+  },
+  {
+    "id": "4100",
+    "code": "4100",
+    "districtId": "485",
+    "nameEn": "Nanded",
+    "nameMr": "नांदेड"
+  },
+  {
+    "id": "4147",
+    "code": "4147",
+    "districtId": "487",
+    "nameEn": "Nandgaon",
+    "nameMr": "नांदगाव"
+  },
+  {
+    "id": "4012",
+    "code": "4012",
+    "districtId": "468",
+    "nameEn": "Nandgaon-Khandeshwar",
+    "nameMr": "नांदगाव खंडेश्वर"
+  },
+  {
+    "id": "3978",
+    "code": "3978",
+    "districtId": "472",
+    "nameEn": "Nandura",
+    "nameMr": "नांदुरा"
+  },
+  {
+    "id": "3954",
+    "code": "3954",
+    "districtId": "486",
+    "nameEn": "Nandurbar",
+    "nameMr": "नंदूरबार"
+  },
+  {
+    "id": "4023",
+    "code": "4023",
+    "districtId": "484",
+    "nameEn": "Narkhed",
+    "nameMr": "नरखेड"
+  },
+  {
+    "id": "4152",
+    "code": "4152",
+    "districtId": "487",
+    "nameEn": "Nashik",
+    "nameMr": "नाशिक"
+  },
+  {
+    "id": "3955",
+    "code": "3955",
+    "districtId": "486",
+    "nameEn": "Nawapur",
+    "nameMr": "नवापूर"
+  },
+  {
+    "id": "4079",
+    "code": "4079",
+    "districtId": "500",
+    "nameEn": "Ner",
+    "nameMr": "नेर"
+  },
+  {
+    "id": "4206",
+    "code": "4206",
+    "districtId": "466",
+    "nameEn": "Nevasa",
+    "nameMr": "नेवासा"
+  },
+  {
+    "id": "4233",
+    "code": "4233",
+    "districtId": "481",
+    "nameEn": "Nilanga",
+    "nameMr": "निलंगा"
+  },
+  {
+    "id": "4155",
+    "code": "4155",
+    "districtId": "487",
+    "nameEn": "Niphad",
+    "nameMr": "निफाड"
+  },
+  {
+    "id": "4243",
+    "code": "4243",
+    "districtId": "488",
+    "nameEn": "Omarga",
+    "nameMr": "उमरगा"
+  },
+  {
+    "id": "3973",
+    "code": "3973",
+    "districtId": "478",
+    "nameEn": "Pachora",
+    "nameMr": "पाचोरा"
+  },
+  {
+    "id": "4141",
+    "code": "4141",
+    "districtId": "469",
+    "nameEn": "Paithan",
+    "nameMr": "पैठण"
+  },
+  {
+    "id": "4123",
+    "code": "4123",
+    "districtId": "489",
+    "nameEn": "Palam",
+    "nameMr": "पालम"
+  },
+  {
+    "id": "4163",
+    "code": "4163",
+    "districtId": "665",
+    "nameEn": "Palghar",
+    "nameMr": "पालघर"
+  },
+  {
+    "id": "4297",
+    "code": "4297",
+    "districtId": "493",
+    "nameEn": "Palus",
+    "nameMr": "पलुस"
+  },
+  {
+    "id": "4249",
+    "code": "4249",
+    "districtId": "496",
+    "nameEn": "Pandharpur",
+    "nameMr": "पंढरपूर"
+  },
+  {
+    "id": "4284",
+    "code": "4284",
+    "districtId": "480",
+    "nameEn": "Panhala",
+    "nameMr": "पन्हाळा"
+  },
+  {
+    "id": "4173",
+    "code": "4173",
+    "districtId": "491",
+    "nameEn": "Panvel",
+    "nameMr": "पनवेल"
+  },
+  {
+    "id": "4236",
+    "code": "4236",
+    "districtId": "488",
+    "nameEn": "Paranda",
+    "nameMr": "परंडा"
+  },
+  {
+    "id": "4118",
+    "code": "4118",
+    "districtId": "489",
+    "nameEn": "Parbhani",
+    "nameMr": "परभणी"
+  },
+  {
+    "id": "4224",
+    "code": "4224",
+    "districtId": "470",
+    "nameEn": "Parli",
+    "nameMr": "परळी"
+  },
+  {
+    "id": "4211",
+    "code": "4211",
+    "districtId": "466",
+    "nameEn": "Parner",
+    "nameMr": "पारनेर"
+  },
+  {
+    "id": "3970",
+    "code": "3970",
+    "districtId": "478",
+    "nameEn": "Parola",
+    "nameMr": "पारोळा"
+  },
+  {
+    "id": "4027",
+    "code": "4027",
+    "districtId": "484",
+    "nameEn": "Parseoni",
+    "nameMr": "पारशिवनी"
+  },
+  {
+    "id": "4131",
+    "code": "4131",
+    "districtId": "479",
+    "nameEn": "Partur",
+    "nameMr": "परतूर"
+  },
+  {
+    "id": "4264",
+    "code": "4264",
+    "districtId": "494",
+    "nameEn": "Patan",
+    "nameMr": "पाटण"
+  },
+  {
+    "id": "4208",
+    "code": "4208",
+    "districtId": "466",
+    "nameEn": "Pathardi",
+    "nameMr": "पाथर्डी"
+  },
+  {
+    "id": "4120",
+    "code": "4120",
+    "districtId": "489",
+    "nameEn": "Pathri",
+    "nameMr": "पाथ्री"
+  },
+  {
+    "id": "4216",
+    "code": "4216",
+    "districtId": "470",
+    "nameEn": "Patoda",
+    "nameMr": "पाटोदा"
+  },
+  {
+    "id": "3993",
+    "code": "3993",
+    "districtId": "467",
+    "nameEn": "Patur",
+    "nameMr": "पातूर"
+  },
+  {
+    "id": "4042",
+    "code": "4042",
+    "districtId": "471",
+    "nameEn": "Pauni",
+    "nameMr": "पवनी"
+  },
+  {
+    "id": "4176",
+    "code": "4176",
+    "districtId": "491",
+    "nameEn": "Pen",
+    "nameMr": "पेण"
+  },
+  {
+    "id": "4150",
+    "code": "4150",
+    "districtId": "487",
+    "nameEn": "Peth",
+    "nameMr": "पेठ"
+  },
+  {
+    "id": "4258",
+    "code": "4258",
+    "districtId": "494",
+    "nameEn": "Phaltan",
+    "nameMr": "फलटण"
+  },
+  {
+    "id": "4136",
+    "code": "4136",
+    "districtId": "469",
+    "nameEn": "Phulambri",
+    "nameMr": "फुलंब्री"
+  },
+  {
+    "id": "4186",
+    "code": "4186",
+    "districtId": "491",
+    "nameEn": "Poladpur",
+    "nameMr": "पोलादपूर"
+  },
+  {
+    "id": "4073",
+    "code": "4073",
+    "districtId": "473",
+    "nameEn": "Pombhurna",
+    "nameMr": "पोम्भूर्णा"
+  },
+  {
+    "id": "4194",
+    "code": "4194",
+    "districtId": "490",
+    "nameEn": "Pune City",
+    "nameMr": "पुणे शहर"
+  },
+  {
+    "id": "4196",
+    "code": "4196",
+    "districtId": "490",
+    "nameEn": "Purandhar",
+    "nameMr": "पुरंदर"
+  },
+  {
+    "id": "4124",
+    "code": "4124",
+    "districtId": "489",
+    "nameEn": "Purna",
+    "nameMr": "पुर्णा"
+  },
+  {
+    "id": "4085",
+    "code": "4085",
+    "districtId": "500",
+    "nameEn": "Pusad",
+    "nameMr": "पूसद"
+  },
+  {
+    "id": "4289",
+    "code": "4289",
+    "districtId": "480",
+    "nameEn": "Radhanagari",
+    "nameMr": "राधानगरी"
+  },
+  {
+    "id": "4204",
+    "code": "4204",
+    "districtId": "466",
+    "nameEn": "Rahta",
+    "nameMr": "रहाता"
+  },
+  {
+    "id": "4210",
+    "code": "4210",
+    "districtId": "466",
+    "nameEn": "Rahuri",
+    "nameMr": "राहुरी"
+  },
+  {
+    "id": "4274",
+    "code": "4274",
+    "districtId": "492",
+    "nameEn": "Rajapur",
+    "nameMr": "राजापूर"
+  },
+  {
+    "id": "4077",
+    "code": "4077",
+    "districtId": "473",
+    "nameEn": "Rajura",
+    "nameMr": "राजुरा"
+  },
+  {
+    "id": "4091",
+    "code": "4091",
+    "districtId": "500",
+    "nameEn": "Ralegaon",
+    "nameMr": "राळेगाव"
+  },
+  {
+    "id": "4028",
+    "code": "4028",
+    "districtId": "484",
+    "nameEn": "Ramtek",
+    "nameMr": "रामटेक"
+  },
+  {
+    "id": "4271",
+    "code": "4271",
+    "districtId": "492",
+    "nameEn": "Ratnagiri",
+    "nameMr": "रत्नागिरी"
+  },
+  {
+    "id": "3962",
+    "code": "3962",
+    "districtId": "478",
+    "nameEn": "Raver",
+    "nameMr": "रावेर"
+  },
+  {
+    "id": "4227",
+    "code": "4227",
+    "districtId": "481",
+    "nameEn": "Renapur",
+    "nameMr": "रेनापूर"
+  },
+  {
+    "id": "4000",
+    "code": "4000",
+    "districtId": "499",
+    "nameEn": "Risod",
+    "nameMr": "रिसोड"
+  },
+  {
+    "id": "4179",
+    "code": "4179",
+    "districtId": "491",
+    "nameEn": "Roha",
+    "nameMr": "रोहा"
+  },
+  {
+    "id": "4049",
+    "code": "4049",
+    "districtId": "476",
+    "nameEn": "Sadak-Arjuni",
+    "nameMr": "सडक अर्जुनी"
+  },
+  {
+    "id": "4040",
+    "code": "4040",
+    "districtId": "471",
+    "nameEn": "Sakoli",
+    "nameMr": "साकोली"
+  },
+  {
+    "id": "3958",
+    "code": "3958",
+    "districtId": "474",
+    "nameEn": "Sakri",
+    "nameMr": "साक्री"
+  },
+  {
+    "id": "4048",
+    "code": "4048",
+    "districtId": "476",
+    "nameEn": "Salekasa",
+    "nameMr": "सालेकसा"
+  },
+  {
+    "id": "4022",
+    "code": "4022",
+    "districtId": "498",
+    "nameEn": "Samudrapur",
+    "nameMr": "समुद्रपूर"
+  },
+  {
+    "id": "4272",
+    "code": "4272",
+    "districtId": "492",
+    "nameEn": "Sangameshwar",
+    "nameMr": "संगमेश्वर"
+  },
+  {
+    "id": "4202",
+    "code": "4202",
+    "districtId": "466",
+    "nameEn": "Sangamner",
+    "nameMr": "संगमनेर"
+  },
+  {
+    "id": "4251",
+    "code": "4251",
+    "districtId": "496",
+    "nameEn": "Sangole",
+    "nameMr": "सांगोले"
+  },
+  {
+    "id": "3976",
+    "code": "3976",
+    "districtId": "472",
+    "nameEn": "Sangrampur",
+    "nameMr": "संग्रामपूर"
+  },
+  {
+    "id": "4262",
+    "code": "4262",
+    "districtId": "494",
+    "nameEn": "Satara",
+    "nameMr": "सातारा"
+  },
+  {
+    "id": "4026",
+    "code": "4026",
+    "districtId": "484",
+    "nameEn": "Savner",
+    "nameMr": "सावनेर"
+  },
+  {
+    "id": "4068",
+    "code": "4068",
+    "districtId": "473",
+    "nameEn": "Sawali",
+    "nameMr": "सावली"
+  },
+  {
+    "id": "4281",
+    "code": "4281",
+    "districtId": "495",
+    "nameEn": "Sawantwadi",
+    "nameMr": "सावंतवाडी"
+  },
+  {
+    "id": "4018",
+    "code": "4018",
+    "districtId": "498",
+    "nameEn": "Seloo",
+    "nameMr": "सेलू"
+  },
+  {
+    "id": "4116",
+    "code": "4116",
+    "districtId": "489",
+    "nameEn": "Selu",
+    "nameMr": "सेलू"
+  },
+  {
+    "id": "4111",
+    "code": "4111",
+    "districtId": "477",
+    "nameEn": "Sengaon",
+    "nameMr": "सेनगाव"
+  },
+  {
+    "id": "3953",
+    "code": "3953",
+    "districtId": "486",
+    "nameEn": "Shahade",
+    "nameMr": "शहादा"
+  },
+  {
+    "id": "4167",
+    "code": "4167",
+    "districtId": "497",
+    "nameEn": "Shahapur",
+    "nameMr": "शहापूर"
+  },
+  {
+    "id": "4283",
+    "code": "4283",
+    "districtId": "480",
+    "nameEn": "Shahuwadi",
+    "nameMr": "शाहूवाडी"
+  },
+  {
+    "id": "3977",
+    "code": "3977",
+    "districtId": "472",
+    "nameEn": "Shegaon",
+    "nameMr": "शेगाव"
+  },
+  {
+    "id": "4207",
+    "code": "4207",
+    "districtId": "466",
+    "nameEn": "Shevgaon",
+    "nameMr": "शेगाव"
+  },
+  {
+    "id": "4295",
+    "code": "4295",
+    "districtId": "493",
+    "nameEn": "Shirala",
+    "nameMr": "शिराळा"
+  },
+  {
+    "id": "4286",
+    "code": "4286",
+    "districtId": "480",
+    "nameEn": "Shirol",
+    "nameMr": "शिरोळ"
+  },
+  {
+    "id": "3956",
+    "code": "3956",
+    "districtId": "474",
+    "nameEn": "Shirpur",
+    "nameMr": "शिरपूर"
+  },
+  {
+    "id": "4189",
+    "code": "4189",
+    "districtId": "490",
+    "nameEn": "Shirur",
+    "nameMr": "शिरूर"
+  },
+  {
+    "id": "4217",
+    "code": "4217",
+    "districtId": "470",
+    "nameEn": "Shirur (Kasar)",
+    "nameMr": "शिरूर (कासार)"
+  },
+  {
+    "id": "4231",
+    "code": "4231",
+    "districtId": "481",
+    "nameEn": "Shirur Anantpal",
+    "nameMr": "शिरूर अनंतपाळ"
+  },
+  {
+    "id": "4212",
+    "code": "4212",
+    "districtId": "466",
+    "nameEn": "Shrigonda",
+    "nameMr": "श्रीगोंदा"
+  },
+  {
+    "id": "4205",
+    "code": "4205",
+    "districtId": "466",
+    "nameEn": "Shrirampur",
+    "nameMr": "श्रीरामपूर"
+  },
+  {
+    "id": "4183",
+    "code": "4183",
+    "districtId": "491",
+    "nameEn": "Shrivardhan",
+    "nameMr": "श्रीवर्धन"
+  },
+  {
+    "id": "4135",
+    "code": "4135",
+    "districtId": "469",
+    "nameEn": "Sillod",
+    "nameMr": "सिल्लोड"
+  },
+  {
+    "id": "4069",
+    "code": "4069",
+    "districtId": "473",
+    "nameEn": "Sindewahi",
+    "nameMr": "सिंदेवाही"
+  },
+  {
+    "id": "3986",
+    "code": "3986",
+    "districtId": "472",
+    "nameEn": "Sindkhed Raja",
+    "nameMr": "सिंदखेड राजा"
+  },
+  {
+    "id": "3957",
+    "code": "3957",
+    "districtId": "474",
+    "nameEn": "Sindkhede",
+    "nameMr": "सिंदखेडे"
+  },
+  {
+    "id": "4154",
+    "code": "4154",
+    "districtId": "487",
+    "nameEn": "Sinnar",
+    "nameMr": "सिन्नर"
+  },
+  {
+    "id": "4063",
+    "code": "4063",
+    "districtId": "475",
+    "nameEn": "Sironcha",
+    "nameMr": "सिरोंचा"
+  },
+  {
+    "id": "4134",
+    "code": "4134",
+    "districtId": "469",
+    "nameEn": "Soegaon",
+    "nameMr": "सोयगाव"
+  },
+  {
+    "id": "4247",
+    "code": "4247",
+    "districtId": "496",
+    "nameEn": "Solapur North",
+    "nameMr": "उत्तर सोलापूर"
+  },
+  {
+    "id": "4253",
+    "code": "4253",
+    "districtId": "496",
+    "nameEn": "Solapur South",
+    "nameMr": "दक्षिण सोलापूर"
+  },
+  {
+    "id": "4121",
+    "code": "4121",
+    "districtId": "489",
+    "nameEn": "Sonpeth",
+    "nameMr": "सोनपेठ"
+  },
+  {
+    "id": "4180",
+    "code": "4180",
+    "districtId": "491",
+    "nameEn": "Sudhagad",
+    "nameMr": "सुधागड"
+  },
+  {
+    "id": "4142",
+    "code": "4142",
+    "districtId": "487",
+    "nameEn": "Surgana",
+    "nameMr": "सुरगना"
+  },
+  {
+    "id": "4182",
+    "code": "4182",
+    "districtId": "491",
+    "nameEn": "Tala",
+    "nameMr": "तळा"
+  },
+  {
+    "id": "4157",
+    "code": "4157",
+    "districtId": "665",
+    "nameEn": "Talasari",
+    "nameMr": "तलासरी"
+  },
+  {
+    "id": "3952",
+    "code": "3952",
+    "districtId": "486",
+    "nameEn": "Talode",
+    "nameMr": "तलोदा"
+  },
+  {
+    "id": "4301",
+    "code": "4301",
+    "districtId": "493",
+    "nameEn": "Tasgaon",
+    "nameMr": "तासगाव"
+  },
+  {
+    "id": "3988",
+    "code": "3988",
+    "districtId": "467",
+    "nameEn": "Telhara",
+    "nameMr": "तेल्हारा"
+  },
+  {
+    "id": "4165",
+    "code": "4165",
+    "districtId": "497",
+    "nameEn": "Thane",
+    "nameMr": "ठाणे"
+  },
+  {
+    "id": "4008",
+    "code": "4008",
+    "districtId": "468",
+    "nameEn": "Tiosa",
+    "nameMr": "तिवसा"
+  },
+  {
+    "id": "4044",
+    "code": "4044",
+    "districtId": "476",
+    "nameEn": "Tirora",
+    "nameMr": "तिरोडा"
+  },
+  {
+    "id": "4151",
+    "code": "4151",
+    "districtId": "487",
+    "nameEn": "Trimbakeshwar",
+    "nameMr": "त्र्यंबक"
+  },
+  {
+    "id": "4241",
+    "code": "4241",
+    "districtId": "488",
+    "nameEn": "Tuljapur",
+    "nameMr": "तुळजापूर"
+  },
+  {
+    "id": "4037",
+    "code": "4037",
+    "districtId": "471",
+    "nameEn": "Tumsar",
+    "nameMr": "तुमसर"
+  },
+  {
+    "id": "4235",
+    "code": "4235",
+    "districtId": "481",
+    "nameEn": "Udgir",
+    "nameMr": "उदगीर"
+  },
+  {
+    "id": "4169",
+    "code": "4169",
+    "districtId": "497",
+    "nameEn": "Ulhasnagar",
+    "nameMr": "उल्हासनगर"
+  },
+  {
+    "id": "4086",
+    "code": "4086",
+    "districtId": "500",
+    "nameEn": "Umarkhed",
+    "nameMr": "उमरखेड"
+  },
+  {
+    "id": "4034",
+    "code": "4034",
+    "districtId": "484",
+    "nameEn": "Umred",
+    "nameMr": "उमरेड"
+  },
+  {
+    "id": "4103",
+    "code": "4103",
+    "districtId": "485",
+    "nameEn": "Umri",
+    "nameMr": "उमरी"
+  },
+  {
+    "id": "4172",
+    "code": "4172",
+    "districtId": "491",
+    "nameEn": "Uran",
+    "nameMr": "उरण"
+  },
+  {
+    "id": "4276",
+    "code": "4276",
+    "districtId": "495",
+    "nameEn": "Vaibhavvadi",
+    "nameMr": "वैभववाडी"
+  },
+  {
+    "id": "4139",
+    "code": "4139",
+    "districtId": "469",
+    "nameEn": "Vaijapur",
+    "nameMr": "वैजापूर"
+  },
+  {
+    "id": "4164",
+    "code": "4164",
+    "districtId": "665",
+    "nameEn": "Vasai",
+    "nameMr": "वसई"
+  },
+  {
+    "id": "4115",
+    "code": "4115",
+    "districtId": "477",
+    "nameEn": "Vasmath",
+    "nameMr": "वसमत"
+  },
+  {
+    "id": "4197",
+    "code": "4197",
+    "districtId": "490",
+    "nameEn": "Velhe",
+    "nameMr": "वेल्हे"
+  },
+  {
+    "id": "4279",
+    "code": "4279",
+    "districtId": "495",
+    "nameEn": "Vengurla",
+    "nameMr": "वेंगुर्ला"
+  },
+  {
+    "id": "4159",
+    "code": "4159",
+    "districtId": "665",
+    "nameEn": "Vikramgad",
+    "nameMr": "विक्रमगड"
+  },
+  {
+    "id": "4162",
+    "code": "4162",
+    "districtId": "665",
+    "nameEn": "Wada",
+    "nameMr": "वाडा"
+  },
+  {
+    "id": "4220",
+    "code": "4220",
+    "districtId": "470",
+    "nameEn": "Wadwani",
+    "nameMr": "वडवणी"
+  },
+  {
+    "id": "4256",
+    "code": "4256",
+    "districtId": "494",
+    "nameEn": "Wai",
+    "nameMr": "वाई"
+  },
+  {
+    "id": "4296",
+    "code": "4296",
+    "districtId": "493",
+    "nameEn": "Walwa",
+    "nameMr": "वाळवा"
+  },
+  {
+    "id": "4094",
+    "code": "4094",
+    "districtId": "500",
+    "nameEn": "Wani",
+    "nameMr": "वनी"
+  },
+  {
+    "id": "4019",
+    "code": "4019",
+    "districtId": "498",
+    "nameEn": "Wardha",
+    "nameMr": "वर्धा"
+  },
+  {
+    "id": "4064",
+    "code": "4064",
+    "districtId": "473",
+    "nameEn": "Warora",
+    "nameMr": "वरोरा"
+  },
+  {
+    "id": "4007",
+    "code": "4007",
+    "districtId": "468",
+    "nameEn": "Warud",
+    "nameMr": "वरूड"
+  },
+  {
+    "id": "4238",
+    "code": "4238",
+    "districtId": "488",
+    "nameEn": "Washi",
+    "nameMr": "वाशी"
+  },
+  {
+    "id": "3999",
+    "code": "3999",
+    "districtId": "499",
+    "nameEn": "Washim",
+    "nameMr": "वाशिम"
+  },
+  {
+    "id": "4082",
+    "code": "4082",
+    "districtId": "500",
+    "nameEn": "Yavatmal",
+    "nameMr": "यवतमाळ"
+  },
+  {
+    "id": "3961",
+    "code": "3961",
+    "districtId": "478",
+    "nameEn": "Yawal",
+    "nameMr": "यावल"
+  },
+  {
+    "id": "4156",
+    "code": "4156",
+    "districtId": "487",
+    "nameEn": "Yevla",
+    "nameMr": "येवला"
+  },
+  {
+    "id": "4093",
+    "code": "4093",
+    "districtId": "500",
+    "nameEn": "Zari-Jamani",
+    "nameMr": "जरी जामनी"
+  }
+]

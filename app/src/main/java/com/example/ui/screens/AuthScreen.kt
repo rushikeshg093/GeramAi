@@ -62,7 +62,8 @@ fun AuthScreen(
         otp: String,
         expectedOtp: String,
         pass: String
-    ) -> Unit
+    ) -> Unit,
+    onBackToRoleSelection: (() -> Unit)? = null
 ) {
     var isRegisterMode by remember { mutableStateOf(false) }
 
@@ -169,10 +170,35 @@ fun AuthScreen(
                 }
             }
 
-            LanguageToggleChip(
-                currentLanguage = language,
-                onToggle = onToggleLanguage
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                if (onBackToRoleSelection != null) {
+                    FilledTonalButton(
+                        onClick = onBackToRoleSelection,
+                        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp),
+                        modifier = Modifier.height(34.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.SwapHoriz,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = if (language == AppLanguage.MARATHI) "भूमिका बदला" else "Role",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                LanguageToggleChip(
+                    currentLanguage = language,
+                    onToggle = onToggleLanguage
+                )
+            }
         }
 
         Spacer(modifier = Modifier.height(16.dp))

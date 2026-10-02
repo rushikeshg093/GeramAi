@@ -1,0 +1,218 @@
+[
+  {
+    "id": "466",
+    "code": "466",
+    "nameEn": "Ahilyanagar",
+    "nameMr": "अहिल्यानगर"
+  },
+  {
+    "id": "467",
+    "code": "467",
+    "nameEn": "Akola",
+    "nameMr": "अकोला"
+  },
+  {
+    "id": "468",
+    "code": "468",
+    "nameEn": "Amravati",
+    "nameMr": "अमरावती"
+  },
+  {
+    "id": "470",
+    "code": "470",
+    "nameEn": "Beed",
+    "nameMr": "बीड"
+  },
+  {
+    "id": "471",
+    "code": "471",
+    "nameEn": "Bhandara",
+    "nameMr": "भंडारा"
+  },
+  {
+    "id": "472",
+    "code": "472",
+    "nameEn": "Buldhana",
+    "nameMr": "बुलढाणा"
+  },
+  {
+    "id": "473",
+    "code": "473",
+    "nameEn": "Chandrapur",
+    "nameMr": "चंद्रपूर"
+  },
+  {
+    "id": "469",
+    "code": "469",
+    "nameEn": "Chhatrapati Sambhajinagar",
+    "nameMr": "छत्रपती संभाजीनगर"
+  },
+  {
+    "id": "488",
+    "code": "488",
+    "nameEn": "Dharashiv",
+    "nameMr": "धाराशिव"
+  },
+  {
+    "id": "474",
+    "code": "474",
+    "nameEn": "Dhule",
+    "nameMr": "धुळे"
+  },
+  {
+    "id": "475",
+    "code": "475",
+    "nameEn": "Gadchiroli",
+    "nameMr": "गडचिरोली"
+  },
+  {
+    "id": "476",
+    "code": "476",
+    "nameEn": "Gondia",
+    "nameMr": "गोंदीया"
+  },
+  {
+    "id": "477",
+    "code": "477",
+    "nameEn": "Hingoli",
+    "nameMr": "हिंगोली"
+  },
+  {
+    "id": "478",
+    "code": "478",
+    "nameEn": "Jalgaon",
+    "nameMr": "जळगाव"
+  },
+  {
+    "id": "479",
+    "code": "479",
+    "nameEn": "Jalna",
+    "nameMr": "जालना"
+  },
+  {
+    "id": "480",
+    "code": "480",
+    "nameEn": "Kolhapur",
+    "nameMr": "कोल्हापूर"
+  },
+  {
+    "id": "481",
+    "code": "481",
+    "nameEn": "Latur",
+    "nameMr": "लातूर"
+  },
+  {
+    "id": "482",
+    "code": "482",
+    "nameEn": "Mumbai",
+    "nameMr": "मुंबई"
+  },
+  {
+    "id": "483",
+    "code": "483",
+    "nameEn": "Mumbai Suburban",
+    "nameMr": "मुंबई उपनगर"
+  },
+  {
+    "id": "484",
+    "code": "484",
+    "nameEn": "Nagpur",
+    "nameMr": "नागपूर"
+  },
+  {
+    "id": "485",
+    "code": "485",
+    "nameEn": "Nanded",
+    "nameMr": "नांदेड"
+  },
+  {
+    "id": "486",
+    "code": "486",
+    "nameEn": "Nandurbar",
+    "nameMr": "नंदूरबार"
+  },
+  {
+    "id": "487",
+    "code": "487",
+    "nameEn": "Nashik",
+    "nameMr": "नाशिक"
+  },
+  {
+    "id": "665",
+    "code": "665",
+    "nameEn": "Palghar",
+    "nameMr": "पालघर"
+  },
+  {
+    "id": "489",
+    "code": "489",
+    "nameEn": "Parbhani",
+    "nameMr": "परभणी"
+  },
+  {
+    "id": "490",
+    "code": "490",
+    "nameEn": "Pune",
+    "nameMr": "पुणे"
+  },
+  {
+    "id": "491",
+    "code": "491",
+    "nameEn": "Raigad",
+    "nameMr": "रायगड"
+  },
+  {
+    "id": "492",
+    "code": "492",
+    "nameEn": "Ratnagiri",
+    "nameMr": "रत्नागिरी"
+  },
+  {
+    "id": "493",
+    "code": "493",
+    "nameEn": "Sangli",
+    "nameMr": "सांगली"
+  },
+  {
+    "id": "494",
+    "code": "494",
+    "nameEn": "Satara",
+    "nameMr": "सातारा"
+  },
+  {
+    "id": "495",
+    "code": "495",
+    "nameEn": "Sindhudurg",
+    "nameMr": "सिंधुदुर्ग"
+  },
+  {
+    "id": "496",
+    "code": "496",
+    "nameEn": "Solapur",
+    "nameMr": "सोलापूर"
+  },
+  {
+    "id": "497",
+    "code": "497",
+    "nameEn": "Thane",
+    "nameMr": "ठाणे"
+  },
+  {
+    "id": "498",
+    "code": "498",
+    "nameEn": "Wardha",
+    "nameMr": "वर्धा"
+  },
+  {
+    "id": "499",
+    "code": "499",
+    "nameEn": "Washim",
+    "nameMr": "वाशिम"
+  },
+  {
+    "id": "500",
+    "code": "500",
+    "nameEn": "Yavatmal",
+    "nameMr": "यवतमाळ"
+  }
+]

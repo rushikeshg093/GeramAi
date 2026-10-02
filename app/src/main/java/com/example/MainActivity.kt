@@ -21,6 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.data.local.AppLanguage
 import com.example.data.notification.NotificationHelper
 import com.example.ui.screens.*
+import com.example.ui.screens.admin.AdminActivationScreen
 import com.example.ui.screens.admin.AdminDashboardScreen
 import com.example.ui.screens.admin.AdminLoginScreen
 import com.example.ui.theme.GrampanchayatTheme
@@ -106,6 +107,9 @@ fun GrampanchayatApp(viewModel: GrampanchayatViewModel) {
     val adminUser by viewModel.adminUser.collectAsStateWithLifecycle()
     val isAdminLoading by viewModel.isAdminLoading.collectAsStateWithLifecycle()
     val adminLoginError by viewModel.adminLoginError.collectAsStateWithLifecycle()
+    val isActivatingOfficer by viewModel.isActivatingOfficer.collectAsStateWithLifecycle()
+    val adminActivationError by viewModel.adminActivationError.collectAsStateWithLifecycle()
+    val verifiedPreapprovedOfficer by viewModel.verifiedPreapprovedOfficer.collectAsStateWithLifecycle()
     val panchayatProfile by viewModel.panchayatProfile.collectAsStateWithLifecycle()
     val wards by viewModel.wards.collectAsStateWithLifecycle()
     val onlineServices by viewModel.onlineServices.collectAsStateWithLifecycle()
@@ -129,12 +133,30 @@ fun GrampanchayatApp(viewModel: GrampanchayatViewModel) {
     val selectedAppForCertificate by viewModel.selectedApplicationForCertificate.collectAsStateWithLifecycle()
     val isAiThinking by viewModel.isAiThinking.collectAsStateWithLifecycle()
 
-    // Back handler: if on sub-screens, navigate back to HOME (or AUTH if not logged in)
-    BackHandler(enabled = currentScreen != ScreenDestination.HOME && currentScreen != ScreenDestination.SPLASH && currentScreen != ScreenDestination.AUTH) {
-        if (userProfile?.isRegistered == true && !userProfile?.fullName.isNullOrBlank()) {
-            viewModel.navigateTo(ScreenDestination.HOME)
-        } else {
-            viewModel.navigateTo(ScreenDestination.AUTH)
+    // Back handler
+    BackHandler(enabled = currentScreen != ScreenDestination.ROLE_SELECTION && currentScreen != ScreenDestination.SPLASH) {
+        when (currentScreen) {
+            ScreenDestination.AUTH, ScreenDestination.ADMIN_LOGIN -> {
+                viewModel.navigateTo(ScreenDestination.ROLE_SELECTION)
+            }
+            ScreenDestination.ADMIN_ACTIVATION -> {
+                viewModel.navigateTo(ScreenDestination.ADMIN_LOGIN)
+            }
+            ScreenDestination.ADMIN_DASHBOARD -> {
+                // Stay on dashboard or handled via logout button
+            }
+            ScreenDestination.HOME -> {
+                // Stay on home
+            }
+            else -> {
+                if (adminUser != null) {
+                    viewModel.navigateTo(ScreenDestination.ADMIN_DASHBOARD)
+                } else if (userProfile?.isRegistered == true && !userProfile?.fullName.isNullOrBlank()) {
+                    viewModel.navigateTo(ScreenDestination.HOME)
+                } else {
+                    viewModel.navigateTo(ScreenDestination.ROLE_SELECTION)
+                }
+            }
         }
     }
 
@@ -218,12 +240,23 @@ fun GrampanchayatApp(viewModel: GrampanchayatViewModel) {
                             language = language,
                             onToggleLanguage = { viewModel.toggleLanguage() },
                             onNavigateNext = {
-                                if (userProfile?.isRegistered == true && !userProfile?.fullName.isNullOrBlank()) {
+                                if (adminUser != null) {
+                                    viewModel.navigateTo(ScreenDestination.ADMIN_DASHBOARD)
+                                } else if (userProfile?.isRegistered == true && !userProfile?.fullName.isNullOrBlank()) {
                                     viewModel.navigateTo(ScreenDestination.HOME)
                                 } else {
-                                    viewModel.navigateTo(ScreenDestination.AUTH)
+                                    viewModel.navigateTo(ScreenDestination.ROLE_SELECTION)
                                 }
                             }
+                        )
+                    }
+
+                    ScreenDestination.ROLE_SELECTION -> {
+                        RoleSelectionScreen(
+                            language = language,
+                            onToggleLanguage = { viewModel.toggleLanguage() },
+                            onSelectCitizen = { viewModel.navigateTo(ScreenDestination.AUTH) },
+                            onSelectAdmin = { viewModel.navigateTo(ScreenDestination.ADMIN_LOGIN) }
                         )
                     }
 
@@ -237,6 +270,7 @@ fun GrampanchayatApp(viewModel: GrampanchayatViewModel) {
                             initialTalukaId = selectedTalukaId,
                             initialGramPanchayatId = selectedGramPanchayatId,
                             onToggleLanguage = { viewModel.toggleLanguage() },
+                            onBackToRoleSelection = { viewModel.navigateTo(ScreenDestination.ROLE_SELECTION) },
                             onLogin = { mobile, gpId, pass ->
                                 viewModel.loginCitizen(mobile, gpId, pass) { success ->
                                     if (success) {
@@ -445,25 +479,68 @@ fun GrampanchayatApp(viewModel: GrampanchayatViewModel) {
                             isLoading = isAdminLoading,
                             errorMessage = adminLoginError,
                             onToggleLanguage = { viewModel.toggleLanguage() },
-                            onLogin = { email, pass ->
-                                viewModel.loginAdmin(email, pass) { success ->
+                            onLogin = { idOrMobile, pass, otp, expOtp ->
+                                viewModel.loginAdmin(idOrMobile, pass, otp, expOtp) { success ->
                                     if (success) {
                                         scope.launch {
                                             snackbarHostState.showSnackbar(
-                                                if (language == AppLanguage.MARATHI) "प्रशासक लॉगिन यशस्वी!" else "Admin login successful!"
+                                                if (language == AppLanguage.MARATHI) "अधिकारी लॉगिन यशस्वी!" else "Officer login successful!"
                                             )
                                         }
                                     }
                                 }
                             },
-                            onResetPassword = { resetEmail ->
-                                viewModel.resetAdminPassword(resetEmail) { success, msg ->
+                            onResetPassword = { query ->
+                                viewModel.resetAdminPassword(query) { success, msg ->
                                     scope.launch {
                                         snackbarHostState.showSnackbar(msg)
                                     }
                                 }
                             },
-                            onBackToCitizenApp = { viewModel.navigateTo(ScreenDestination.HOME) }
+                            onNavigateToActivation = {
+                                viewModel.clearVerifiedOfficer()
+                                viewModel.navigateTo(ScreenDestination.ADMIN_ACTIVATION)
+                            },
+                            onBackToRoleSelection = { viewModel.navigateTo(ScreenDestination.ROLE_SELECTION) }
+                        )
+                    }
+
+                    ScreenDestination.ADMIN_ACTIVATION -> {
+                        AdminActivationScreen(
+                            language = language,
+                            isLoading = isActivatingOfficer,
+                            errorMessage = adminActivationError,
+                            verifiedOfficer = verifiedPreapprovedOfficer,
+                            onToggleLanguage = { viewModel.toggleLanguage() },
+                            onLookupOfficer = { query ->
+                                viewModel.lookupOfficerForActivation(query) { success, officer, err ->
+                                    if (success) {
+                                        scope.launch {
+                                            snackbarHostState.showSnackbar(
+                                                if (language == AppLanguage.MARATHI)
+                                                    "अधिकृत अधिकारी सापडले: ${officer?.fullName}"
+                                                else
+                                                    "Officer verified: ${officer?.fullName}"
+                                            )
+                                        }
+                                    }
+                                }
+                            },
+                            onActivateAccount = { idOrMobile, otp, expOtp, pass ->
+                                viewModel.activateOfficerAccount(idOrMobile, otp, expOtp, pass) { success ->
+                                    if (success) {
+                                        scope.launch {
+                                            snackbarHostState.showSnackbar(
+                                                if (language == AppLanguage.MARATHI)
+                                                    "अधिकारी खाते सक्रिय झाले! कृपया पासवर्ड व OTP वापरून लॉगिन करा."
+                                                else
+                                                    "Officer account activated! Please login with your password & OTP."
+                                            )
+                                        }
+                                    }
+                                }
+                            },
+                            onBackToLogin = { viewModel.navigateTo(ScreenDestination.ADMIN_LOGIN) }
                         )
                     }
 

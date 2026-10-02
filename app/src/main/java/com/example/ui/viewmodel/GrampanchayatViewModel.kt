@@ -17,6 +17,7 @@ import java.util.Locale
 
 enum class ScreenDestination {
     SPLASH,
+    ROLE_SELECTION,
     AUTH,
     HOME,
     COMPLAINTS,
@@ -28,7 +29,13 @@ enum class ScreenDestination {
     ONLINE_SERVICES,
     NOTIFICATIONS,
     ADMIN_LOGIN,
+    ADMIN_ACTIVATION,
     ADMIN_DASHBOARD
+}
+
+enum class PhoneAuthStep {
+    INPUT_DETAILS,
+    VERIFY_OTP
 }
 
 data class ComplaintDraftState(
@@ -58,6 +65,24 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
     private val _citizenAuthError = MutableStateFlow<String?>(null)
     val citizenAuthError: StateFlow<String?> = _citizenAuthError.asStateFlow()
 
+    // Real Firebase Phone Auth (SMS OTP) States
+    private val _phoneAuthStep = MutableStateFlow(PhoneAuthStep.INPUT_DETAILS)
+    val phoneAuthStep: StateFlow<PhoneAuthStep> = _phoneAuthStep.asStateFlow()
+
+    private val _phoneAuthVerificationId = MutableStateFlow<String?>(null)
+    val phoneAuthVerificationId: StateFlow<String?> = _phoneAuthVerificationId.asStateFlow()
+
+    private val _phoneAuthResendToken = MutableStateFlow<com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken?>(null)
+    val phoneAuthResendToken: StateFlow<com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken?> = _phoneAuthResendToken.asStateFlow()
+
+    private val _phoneAuthCooldown = MutableStateFlow(0)
+    val phoneAuthCooldown: StateFlow<Int> = _phoneAuthCooldown.asStateFlow()
+
+    private val _phoneAuthMobile = MutableStateFlow("")
+    val phoneAuthMobile: StateFlow<String> = _phoneAuthMobile.asStateFlow()
+
+    private var cooldownJob: kotlinx.coroutines.Job? = null
+
     // Admin Auth State
     private val _adminUser = MutableStateFlow<AdminUser?>(null)
     val adminUser: StateFlow<AdminUser?> = _adminUser.asStateFlow()
@@ -67,6 +92,15 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
 
     private val _adminLoginError = MutableStateFlow<String?>(null)
     val adminLoginError: StateFlow<String?> = _adminLoginError.asStateFlow()
+
+    private val _isActivatingOfficer = MutableStateFlow(false)
+    val isActivatingOfficer: StateFlow<Boolean> = _isActivatingOfficer.asStateFlow()
+
+    private val _adminActivationError = MutableStateFlow<String?>(null)
+    val adminActivationError: StateFlow<String?> = _adminActivationError.asStateFlow()
+
+    private val _verifiedPreapprovedOfficer = MutableStateFlow<PreapprovedOfficer?>(null)
+    val verifiedPreapprovedOfficer: StateFlow<PreapprovedOfficer?> = _verifiedPreapprovedOfficer.asStateFlow()
 
     // Data streams from Room / Repository
     val userProfile: StateFlow<UserProfile?> = repository.getUserProfile()
@@ -490,10 +524,282 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
         }
     }
 
+    fun startCooldownTimer(durationSeconds: Int = 60) {
+        cooldownJob?.cancel()
+        _phoneAuthCooldown.value = durationSeconds
+        cooldownJob = viewModelScope.launch {
+            while (_phoneAuthCooldown.value > 0) {
+                kotlinx.coroutines.delay(1000)
+                _phoneAuthCooldown.value = _phoneAuthCooldown.value - 1
+            }
+        }
+    }
+
+    fun sendPhoneOtp(
+        activity: android.app.Activity,
+        mobileNumber: String,
+        onSuccess: () -> Unit = {}
+    ) {
+        val cleanDigits = mobileNumber.filter { it.isDigit() }
+        val cleanMobile = if (cleanDigits.length >= 10) cleanDigits.takeLast(10) else cleanDigits
+        if (cleanMobile.length < 10) {
+            val err = if (_language.value == AppLanguage.MARATHI)
+                "कृपया १० अंकी वैध मोबाईल नंबर प्रविष्ट करा."
+            else
+                "Please enter a valid 10-digit mobile number."
+            _citizenAuthError.value = err
+            showToast(err)
+            return
+        }
+
+        _phoneAuthMobile.value = cleanMobile
+        _isCitizenAuthLoading.value = true
+        _citizenAuthError.value = null
+
+        repository.sendPhoneOtp(
+            activity = activity,
+            phoneNumber = cleanMobile,
+            forceResendingToken = null,
+            onCodeSent = { verificationId, token ->
+                _isCitizenAuthLoading.value = false
+                _phoneAuthVerificationId.value = verificationId
+                _phoneAuthResendToken.value = token
+                _phoneAuthStep.value = PhoneAuthStep.VERIFY_OTP
+                startCooldownTimer(60)
+                showToast(
+                    if (_language.value == AppLanguage.MARATHI)
+                        "मोबाईलवर SMS OTP पाठवला गेला आहे."
+                    else
+                        "SMS OTP sent to your mobile number."
+                )
+                onSuccess()
+            },
+            onVerificationCompleted = { credential ->
+                _isCitizenAuthLoading.value = false
+                // Firebase instant auto-verification by Google Play Services
+                viewModelScope.launch {
+                    val signInRes = repository.signInWithPhoneCredential(credential)
+                    if (signInRes.isSuccess) {
+                        Log.i("ViewModel", "Auto-verification completed successfully.")
+                    }
+                }
+            },
+            onVerificationFailed = { exception ->
+                _isCitizenAuthLoading.value = false
+                val err = exception.localizedMessage ?: "OTP पाठवण्यात त्रुटी आली."
+                _citizenAuthError.value = err
+                showToast(err)
+            }
+        )
+    }
+
+    fun resendPhoneOtp(activity: android.app.Activity) {
+        if (_phoneAuthCooldown.value > 0) {
+            val waitMsg = if (_language.value == AppLanguage.MARATHI)
+                "कृपया ${_phoneAuthCooldown.value} सेकंद प्रतीक्षा करा."
+            else
+                "Please wait ${_phoneAuthCooldown.value} seconds."
+            showToast(waitMsg)
+            return
+        }
+
+        val cleanMobile = _phoneAuthMobile.value
+        if (cleanMobile.isBlank()) return
+
+        _isCitizenAuthLoading.value = true
+        _citizenAuthError.value = null
+
+        repository.sendPhoneOtp(
+            activity = activity,
+            phoneNumber = cleanMobile,
+            forceResendingToken = _phoneAuthResendToken.value,
+            onCodeSent = { verificationId, token ->
+                _isCitizenAuthLoading.value = false
+                _phoneAuthVerificationId.value = verificationId
+                _phoneAuthResendToken.value = token
+                startCooldownTimer(60)
+                showToast(
+                    if (_language.value == AppLanguage.MARATHI)
+                        "नवीन SMS OTP पाठवला गेला आहे."
+                    else
+                        "New SMS OTP sent."
+                )
+            },
+            onVerificationCompleted = { credential ->
+                _isCitizenAuthLoading.value = false
+            },
+            onVerificationFailed = { exception ->
+                _isCitizenAuthLoading.value = false
+                val err = exception.localizedMessage ?: "OTP पाठवण्यात त्रुटी आली."
+                _citizenAuthError.value = err
+                showToast(err)
+            }
+        )
+    }
+
+    fun verifyPhoneOtpAndRegister(
+        enteredOtp: String,
+        fullName: String,
+        districtId: String = _selectedDistrictId.value,
+        talukaId: String = _selectedTalukaId.value,
+        gramPanchayatId: String = _selectedGramPanchayatId.value,
+        ward: Int,
+        password: String = "Citizen@123",
+        onComplete: (Boolean) -> Unit
+    ) {
+        val verificationId = _phoneAuthVerificationId.value
+        if (verificationId.isNullOrBlank()) {
+            val err = if (_language.value == AppLanguage.MARATHI)
+                "पडताळणी आयडी सापडला नाही. कृपया पुन्हा OTP पाठवा."
+            else
+                "Verification ID missing. Please resend OTP."
+            _citizenAuthError.value = err
+            showToast(err)
+            onComplete(false)
+            return
+        }
+
+        if (enteredOtp.trim().length != 6) {
+            _citizenAuthError.value = "Invalid OTP"
+            showToast(if (_language.value == AppLanguage.MARATHI) "अवैध OTP! ६ अंकी कोड टाका." else "Invalid OTP")
+            onComplete(false)
+            return
+        }
+
+        _isCitizenAuthLoading.value = true
+        _citizenAuthError.value = null
+
+        viewModelScope.launch {
+            val verifyRes = repository.verifyOtpAndSignIn(verificationId, enteredOtp.trim())
+            if (verifyRes.isFailure) {
+                _isCitizenAuthLoading.value = false
+                val err = "Invalid OTP"
+                _citizenAuthError.value = err
+                showToast(if (_language.value == AppLanguage.MARATHI) "अवैध OTP! कृपया SMS तपासून पुन्हा प्रयत्न करा." else "Invalid OTP")
+                onComplete(false)
+                return@launch
+            }
+
+            val firebaseUser = verifyRes.getOrNull()!!
+            val regRes = repository.completeCitizenRegistrationWithFirebaseUser(
+                firebaseUser = firebaseUser,
+                fullName = fullName,
+                districtId = districtId,
+                talukaId = talukaId,
+                gramPanchayatId = gramPanchayatId,
+                wardNumber = ward,
+                mobileNumber = _phoneAuthMobile.value,
+                password = password
+            )
+
+            _isCitizenAuthLoading.value = false
+            if (regRes.isSuccess) {
+                _phoneAuthStep.value = PhoneAuthStep.INPUT_DETAILS
+                _phoneAuthVerificationId.value = null
+                _citizenAuthError.value = null
+                _selectedDistrictId.value = districtId
+                _selectedTalukaId.value = talukaId
+                _selectedGramPanchayatId.value = gramPanchayatId
+                _currentScreen.value = ScreenDestination.HOME
+                showToast(
+                    if (_language.value == AppLanguage.MARATHI)
+                        "नोंदणी यशस्वी झाली! आपले स्वागत आहे, $fullName"
+                    else
+                        "Registration successful! Welcome, $fullName"
+                )
+                onComplete(true)
+            } else {
+                val err = regRes.exceptionOrNull()?.localizedMessage ?: "नोंदणी अयशस्वी"
+                _citizenAuthError.value = err
+                showToast(err)
+                onComplete(false)
+            }
+        }
+    }
+
+    fun verifyPhoneOtpAndLogin(
+        enteredOtp: String,
+        selectedGramPanchayatId: String = _selectedGramPanchayatId.value,
+        onComplete: (Boolean) -> Unit
+    ) {
+        val verificationId = _phoneAuthVerificationId.value
+        if (verificationId.isNullOrBlank()) {
+            val err = if (_language.value == AppLanguage.MARATHI)
+                "पडताळणी आयडी सापडला नाही. कृपया पुन्हा OTP पाठवा."
+            else
+                "Verification ID missing. Please resend OTP."
+            _citizenAuthError.value = err
+            showToast(err)
+            onComplete(false)
+            return
+        }
+
+        if (enteredOtp.trim().length != 6) {
+            _citizenAuthError.value = "Invalid OTP"
+            showToast(if (_language.value == AppLanguage.MARATHI) "अवैध OTP! ६ अंकी कोड टाका." else "Invalid OTP")
+            onComplete(false)
+            return
+        }
+
+        _isCitizenAuthLoading.value = true
+        _citizenAuthError.value = null
+
+        viewModelScope.launch {
+            val verifyRes = repository.verifyOtpAndSignIn(verificationId, enteredOtp.trim())
+            if (verifyRes.isFailure) {
+                _isCitizenAuthLoading.value = false
+                val err = "Invalid OTP"
+                _citizenAuthError.value = err
+                showToast(if (_language.value == AppLanguage.MARATHI) "अवैध OTP! कृपया SMS तपासून पुन्हा प्रयत्न करा." else "Invalid OTP")
+                onComplete(false)
+                return@launch
+            }
+
+            val firebaseUser = verifyRes.getOrNull()!!
+            val loginRes = repository.completeCitizenLoginWithFirebaseUser(
+                firebaseUser = firebaseUser,
+                mobileNumber = _phoneAuthMobile.value,
+                selectedGramPanchayatId = selectedGramPanchayatId
+            )
+
+            _isCitizenAuthLoading.value = false
+            if (loginRes.isSuccess) {
+                val profile = loginRes.getOrNull()
+                _phoneAuthStep.value = PhoneAuthStep.INPUT_DETAILS
+                _phoneAuthVerificationId.value = null
+                _citizenAuthError.value = null
+                if (profile != null) {
+                    _selectedDistrictId.value = profile.districtId
+                    _selectedTalukaId.value = profile.talukaId
+                    _selectedGramPanchayatId.value = profile.gramPanchayatId
+                }
+                _currentScreen.value = ScreenDestination.HOME
+                showToast(
+                    if (_language.value == AppLanguage.MARATHI)
+                        "लॉगिन यशस्वी! आपले स्वागत आहे, ${profile?.fullName ?: ""}"
+                    else
+                        "Login successful! Welcome, ${profile?.fullNameEn ?: ""}"
+                )
+                onComplete(true)
+            } else {
+                val err = loginRes.exceptionOrNull()?.localizedMessage ?: "लॉगिन अयशस्वी"
+                _citizenAuthError.value = err
+                showToast(err)
+                onComplete(false)
+            }
+        }
+    }
+
+    fun resetPhoneAuthStep() {
+        _phoneAuthStep.value = PhoneAuthStep.INPUT_DETAILS
+        _phoneAuthVerificationId.value = null
+        _citizenAuthError.value = null
+    }
+
     fun logout() {
         viewModelScope.launch {
             repository.logoutCitizen()
-            _currentScreen.value = ScreenDestination.AUTH
+            _currentScreen.value = ScreenDestination.ROLE_SELECTION
             showToast(
                 if (_language.value == AppLanguage.MARATHI)
                     "आपण यशस्वीरीत्या लॉग आउट झाला आहात."
@@ -511,24 +817,97 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
         _toastMessage.value = null
     }
 
-    // ================= ADMIN AUTH & DASHBOARD OPERATIONS =================
+    // ================= ADMIN / OFFICER AUTH & DASHBOARD OPERATIONS =================
 
-    fun loginAdmin(email: String, pass: String, onComplete: (Boolean) -> Unit) {
+    fun lookupOfficerForActivation(
+        adminIdOrMobile: String,
+        onResult: (Boolean, PreapprovedOfficer?, String?) -> Unit
+    ) {
+        _isActivatingOfficer.value = true
+        _adminActivationError.value = null
+        viewModelScope.launch {
+            val result = repository.lookupOfficerForActivation(adminIdOrMobile)
+            _isActivatingOfficer.value = false
+            if (result.isSuccess) {
+                val officer = result.getOrNull()
+                _verifiedPreapprovedOfficer.value = officer
+                _adminActivationError.value = null
+                onResult(true, officer, null)
+            } else {
+                val err = result.exceptionOrNull()?.localizedMessage ?: "अधिकारी खाते पडताळणी अयशस्वी"
+                _adminActivationError.value = err
+                _verifiedPreapprovedOfficer.value = null
+                onResult(false, null, err)
+            }
+        }
+    }
+
+    fun clearVerifiedOfficer() {
+        _verifiedPreapprovedOfficer.value = null
+        _adminActivationError.value = null
+    }
+
+    fun activateOfficerAccount(
+        adminIdOrMobile: String,
+        otp: String,
+        expectedOtp: String,
+        password: String,
+        onComplete: (Boolean) -> Unit
+    ) {
+        _isActivatingOfficer.value = true
+        _adminActivationError.value = null
+        viewModelScope.launch {
+            val result = repository.activateOfficerAccount(adminIdOrMobile, otp, expectedOtp, password)
+            _isActivatingOfficer.value = false
+            if (result.isSuccess) {
+                val activatedAdmin = result.getOrNull()
+                _adminActivationError.value = null
+                showToast(
+                    if (_language.value == AppLanguage.MARATHI)
+                        "अधिकारी खाते यशस्वीरीत्या सक्रिय झाले! कृपया आता पासवर्ड व OTP वापरून लॉगिन करा."
+                    else
+                        "Officer account activated successfully! Please login with your password & OTP."
+                )
+                _currentScreen.value = ScreenDestination.ADMIN_LOGIN
+                onComplete(true)
+            } else {
+                val err = result.exceptionOrNull()?.localizedMessage ?: "सक्रियीकरण अयशस्वी"
+                _adminActivationError.value = err
+                showToast(err)
+                onComplete(false)
+            }
+        }
+    }
+
+    fun loginAdmin(
+        adminIdOrMobile: String,
+        pass: String,
+        otp: String = "",
+        expectedOtp: String? = null,
+        onComplete: (Boolean) -> Unit
+    ) {
         _isAdminLoading.value = true
         _adminLoginError.value = null
 
         viewModelScope.launch {
-            val result = repository.signInAdmin(email, pass)
+            val result = repository.signInAdmin(adminIdOrMobile, pass, otp, expectedOtp)
             _isAdminLoading.value = false
             if (result.isSuccess) {
-                _adminUser.value = result.getOrNull()
+                val user = result.getOrNull()
+                _adminUser.value = user
                 _adminLoginError.value = null
+                if (user != null) {
+                    _selectedDistrictId.value = user.districtId
+                    _selectedTalukaId.value = user.talukaId
+                    _selectedGramPanchayatId.value = user.gramPanchayatId
+                    repository.loadPanchayatDataForGp(user.gramPanchayatId)
+                }
                 _currentScreen.value = ScreenDestination.ADMIN_DASHBOARD
                 showToast(
                     if (_language.value == AppLanguage.MARATHI)
-                        "प्रशासकीय लॉगिन यशस्वी!"
+                        "प्रशासकीय लॉगिन यशस्वी! आपले स्वागत आहे, ${user?.name ?: ""}"
                     else
-                        "Admin login successful!"
+                        "Admin login successful! Welcome, ${user?.name ?: ""}"
                 )
                 onComplete(true)
             } else {
@@ -540,14 +919,14 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
         }
     }
 
-    fun resetAdminPassword(email: String, onResult: (Boolean, String) -> Unit) {
+    fun resetAdminPassword(adminIdOrEmail: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
-            val result = repository.sendPasswordResetAdmin(email)
+            val result = repository.sendPasswordResetAdmin(adminIdOrEmail)
             if (result.isSuccess) {
                 val msg = if (_language.value == AppLanguage.MARATHI)
-                    "पासवर्ड रीसेट लिंक $email वर पाठवली आहे. कृपया ईमेल तपासा."
+                    "पासवर्ड रीसेट लिंक/सूचना पाठवली आहे. कृपया तपासा."
                 else
-                    "Password reset link sent to $email. Please check your inbox."
+                    "Password reset instructions sent. Please check."
                 showToast(msg)
                 onResult(true, msg)
             } else {
@@ -562,7 +941,7 @@ class GrampanchayatViewModel(application: Application) : AndroidViewModel(applic
         repository.signOutAdmin()
         _adminUser.value = null
         _adminLoginError.value = null
-        _currentScreen.value = ScreenDestination.HOME
+        _currentScreen.value = ScreenDestination.ROLE_SELECTION
         showToast(
             if (_language.value == AppLanguage.MARATHI)
                 "प्रशासक लॉग आउट झाले."

@@ -256,15 +256,40 @@ data class WardEntity(
     val gramPanchayatId: String = "gp_palaskhed_daulat"
 )
 
+data class PreapprovedOfficer(
+    val adminId: String = "",
+    val mobileNumber: String = "",
+    val officialEmail: String = "",
+    val fullName: String = "",
+    val fullNameEn: String = "",
+    val designation: String = "",
+    val designationEn: String = "",
+    val districtId: String = "buldhana",
+    val talukaId: String = "chikhli",
+    val gramPanchayatId: String = "gp_palaskhed_daulat",
+    val gramPanchayatNameMr: String = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+    val gramPanchayatNameEn: String = "Model Grampanchayat Palaskhed Daulat",
+    val activationToken: String = "ACT-7890",
+    val defaultOtp: String = "852963",
+    val status: String = "PENDING_ACTIVATION", // PENDING_ACTIVATION or ACTIVE
+    val active: Boolean = false,
+    val role: String = "admin"
+)
+
 data class AdminUser(
     val uid: String = "",
+    val adminId: String = "",
     val email: String = "",
+    val mobileNumber: String = "",
     val name: String = "Grampanchayat Admin",
+    val designation: String = "ग्रामविकास अधिकारी",
     val role: String = "admin",
     val active: Boolean = true,
     val districtId: String = "buldhana",
     val talukaId: String = "chikhli",
-    val gramPanchayatId: String = "gp_palaskhed_daulat"
+    val gramPanchayatId: String = "gp_palaskhed_daulat",
+    val gramPanchayatNameMr: String = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+    val gramPanchayatNameEn: String = "Model Grampanchayat Palaskhed Daulat"
 )
 
 data class OnlineServiceItem(

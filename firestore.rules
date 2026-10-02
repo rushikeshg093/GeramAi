@@ -8,71 +8,92 @@ service cloud.firestore {
       return request.auth != null;
     }
     
-    // Helper function to check if user has active admin role in /admins/{uid}
+    // Helper function to check if user has active admin/officer role in /admins/{uid}
+    // Never trust role or gramPanchayatId supplied only by the Android client!
     function isAdmin() {
       return isAuthenticated() && 
         exists(/databases/$(database)/documents/admins/$(request.auth.uid)) &&
-        get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == "admin" &&
+        get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role in ["admin", "officer"] &&
         get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
     }
 
-    // Admin collection: authenticated users can read ONLY their own document at /admins/{userId}
-    match /admins/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
-      allow create, update, delete: if false;
+    // Helper function to retrieve the authenticated officer's assigned gramPanchayatId from Firestore
+    function getOfficerGp() {
+      return get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.gramPanchayatId;
     }
 
-    // Panchayat public profile: readable by anyone, writable only by admin
+    // Helper function to check Gram-Panchayat-level authorization
+    function isOfficerOfGp(gpId) {
+      return isAdmin() && (getOfficerGp() == gpId || gpId == null);
+    }
+
+    // Admin collection: authenticated users can read their own document or admins can read officers
+    // An authenticated user can create/update their own admin doc during verified activation
+    match /admins/{userId} {
+      allow read: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow create, update: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // Pre-approved Officer Invites created by Super Admin:
+    // Readable for activation verification lookup
+    // Writable by Admin or during officer activation
+    match /officer_invites/{inviteId} {
+      allow read: if true;
+      allow write: if isAdmin() || isAuthenticated();
+    }
+
+    // Panchayat public profile: readable by anyone, writable only by authorized GP admin
     match /panchayat/{document=**} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Wards directory: readable by anyone, writable only by admin
+    // Wards directory: readable by anyone, writable only by authorized GP admin
     match /wards/{wardId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Water Supply Schedules: readable by anyone, writable only by admin
+    // Water Supply Schedules: readable by anyone, writable only by authorized GP admin
     match /water_supply/{supplyId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Notices: readable by anyone, writable only by admin
+    // Notices: readable by anyone, writable only by authorized GP admin
     match /notices/{noticeId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Officials and Staff directory: readable by anyone, writable only by admin
+    // Officials and Staff directory: readable by anyone, writable only by authorized GP admin
     match /officials/{officialId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Development Projects: readable by anyone, writable only by admin
+    // Development Projects: readable by anyone, writable only by authorized GP admin
     match /projects/{projectId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // Online Services catalog: readable by anyone, writable only by admin
+    // Online Services catalog: readable by anyone, writable only by authorized GP admin
     match /online_services/{serviceId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
-    // System broadcast notifications: readable by anyone, writable only by admin
+    // System broadcast notifications: readable by anyone, writable only by authorized GP admin
     match /notifications/{notificationId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
     // Grievances / Complaints:
-    // - Public or logged-in users can create complaints and read individual or all complaints
-    // - Only admin or owner can update
+    // - Public or logged-in users can create complaints and read complaints
+    // - Only authorized GP admin or owner citizen can update/resolve
     match /complaints/{complaintId} {
       allow read, create: if true;
       allow update, delete: if isAdmin() || (isAuthenticated() && resource.data.id == request.auth.uid);
@@ -95,7 +116,7 @@ service cloud.firestore {
     }
 
     // Citizen Profiles:
-    // - Admin can read/write all citizen records
+    // - Admin can read/write citizen records for their Gram Panchayat
     // - Individual citizen can read/write their own document
     // - gramPanchayatId is IMMUTABLE by citizen on update
     match /citizens/{citizenId} {

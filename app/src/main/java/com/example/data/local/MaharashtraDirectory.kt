@@ -374,6 +374,126 @@ object MaharashtraDirectory {
         )
     )
 
+    val initialPreapprovedOfficers = listOf(
+        // Palaskhed Daulat Gram Panchayat (Buldhana / Chikhli)
+        PreapprovedOfficer(
+            adminId = "OFF-BULD-CHK-001",
+            mobileNumber = "9423889900",
+            officialEmail = "gramsevak.palaskhed@mahagp.gov.in",
+            fullName = "श्री. गणेश बाळकृष्ण जोशी",
+            fullNameEn = "Mr. Ganesh Balkrishna Joshi",
+            designation = "ग्रामविकास अधिकारी / ग्रामसेवक (VDO)",
+            designationEn = "Village Development Officer (Gramsevak)",
+            districtId = "buldhana",
+            talukaId = "chikhli",
+            gramPanchayatId = "gp_palaskhed_daulat",
+            gramPanchayatNameMr = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+            gramPanchayatNameEn = "Model Grampanchayat Palaskhed Daulat",
+            activationToken = "ACT-7890",
+            defaultOtp = "852963",
+            status = "PENDING_ACTIVATION",
+            active = false,
+            role = "admin"
+        ),
+        PreapprovedOfficer(
+            adminId = "OFF-BULD-CHK-002",
+            mobileNumber = "9822114455",
+            officialEmail = "sarpanch.palaskhed@mahagp.gov.in",
+            fullName = "सौ. सुजाता आनंदराव पाटील",
+            fullNameEn = "Mrs. Sujata Anandrao Patil",
+            designation = "सरपंच (Village Head)",
+            designationEn = "Sarpanch",
+            districtId = "buldhana",
+            talukaId = "chikhli",
+            gramPanchayatId = "gp_palaskhed_daulat",
+            gramPanchayatNameMr = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+            gramPanchayatNameEn = "Model Grampanchayat Palaskhed Daulat",
+            activationToken = "ACT-4561",
+            defaultOtp = "852963",
+            status = "PENDING_ACTIVATION",
+            active = false,
+            role = "admin"
+        ),
+        PreapprovedOfficer(
+            adminId = "OFF-BULD-CHK-003",
+            mobileNumber = "9422556611",
+            officialEmail = "talathi.palaskhed@mahagp.gov.in",
+            fullName = "श्री. दीपक तानाजी देसाई",
+            fullNameEn = "Mr. Deepak Tanaji Desai",
+            designation = "तलाठी (Revenue Officer)",
+            designationEn = "Talathi",
+            districtId = "buldhana",
+            talukaId = "chikhli",
+            gramPanchayatId = "gp_palaskhed_daulat",
+            gramPanchayatNameMr = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+            gramPanchayatNameEn = "Model Grampanchayat Palaskhed Daulat",
+            activationToken = "ACT-3214",
+            defaultOtp = "852963",
+            status = "PENDING_ACTIVATION",
+            active = false,
+            role = "admin"
+        ),
+        PreapprovedOfficer(
+            adminId = "OFF-BULD-CHK-004",
+            mobileNumber = "9422001122",
+            officialEmail = "water.palaskhed@mahagp.gov.in",
+            fullName = "श्री. संतोष विलास पाटील",
+            fullNameEn = "Mr. Santosh Vilas Patil",
+            designation = "पाणीपुरवठा प्रमुख व कनिष्ठ अभियंता",
+            designationEn = "Water Supply Incharge",
+            districtId = "buldhana",
+            talukaId = "chikhli",
+            gramPanchayatId = "gp_palaskhed_daulat",
+            gramPanchayatNameMr = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+            gramPanchayatNameEn = "Model Grampanchayat Palaskhed Daulat",
+            activationToken = "ACT-6547",
+            defaultOtp = "852963",
+            status = "PENDING_ACTIVATION",
+            active = false,
+            role = "admin"
+        ),
+        // Active Super Admin account for testing
+        PreapprovedOfficer(
+            adminId = "OFF-DEMO-ADMIN",
+            mobileNumber = "9999900001",
+            officialEmail = "admin@palaskheddaulatgp.gov.in",
+            fullName = "श्री. विकास रावसाहेब देशमुख",
+            fullNameEn = "Mr. Vikas Raosaheb Deshmukh",
+            designation = "मुख्य प्रशासकीय अधिकारी (Chief Officer)",
+            designationEn = "Chief Administrative Officer",
+            districtId = "buldhana",
+            talukaId = "chikhli",
+            gramPanchayatId = "gp_palaskhed_daulat",
+            gramPanchayatNameMr = "आदर्श ग्रामपंचायत पळसखेड दौलत",
+            gramPanchayatNameEn = "Model Grampanchayat Palaskhed Daulat",
+            activationToken = "ACT-9999",
+            defaultOtp = "852963",
+            status = "ACTIVE",
+            active = true,
+            role = "admin"
+        ),
+        // Wagholi GP (Pune / Haveli) for isolation testing
+        PreapprovedOfficer(
+            adminId = "OFF-PUNE-HAV-001",
+            mobileNumber = "9823012345",
+            officialEmail = "gramsevak.wagholi@mahagp.gov.in",
+            fullName = "श्री. अमोल विठ्ठल गायकवाड",
+            fullNameEn = "Mr. Amol Vitthal Gaikwad",
+            designation = "ग्रामविकास अधिकारी (Gramsevak)",
+            designationEn = "Village Development Officer",
+            districtId = "pune",
+            talukaId = "haveli",
+            gramPanchayatId = "gp_wagholi",
+            gramPanchayatNameMr = "ग्रामपंचायत वाघोली",
+            gramPanchayatNameEn = "Grampanchayat Wagholi",
+            activationToken = "ACT-1122",
+            defaultOtp = "852963",
+            status = "PENDING_ACTIVATION",
+            active = false,
+            role = "admin"
+        )
+    )
+
     fun getAllDistricts(): List<District> {
         return districts
     }
@@ -381,6 +501,20 @@ object MaharashtraDirectory {
     fun findAuthorizedCitizen(mobile: String): AuthorizedCitizen? {
         val clean = mobile.filter { it.isDigit() }.takeLast(10)
         return initialAuthorizedCitizens.find { it.mobileNumber == clean || it.mobileNumber == mobile }
+    }
+
+    fun findPreapprovedOfficer(query: String): PreapprovedOfficer? {
+        val trimmed = query.trim()
+        val digits = trimmed.filter { it.isDigit() }.let { if (it.length >= 10) it.takeLast(10) else it }
+        return initialPreapprovedOfficers.find {
+            it.adminId.equals(trimmed, ignoreCase = true) ||
+            it.mobileNumber == digits ||
+            it.officialEmail.equals(trimmed, ignoreCase = true)
+        }
+    }
+
+    fun getAllPreapprovedOfficers(): List<PreapprovedOfficer> {
+        return initialPreapprovedOfficers
     }
 
     fun getTalukasForDistrict(districtId: String): List<Taluka> {
